@@ -232,104 +232,62 @@ const PromptGym = () => {
 
   if (showWelcome) {
     return (
-      <div className="min-h-screen bg-gray-50 p-8 flex items-center justify-center">
-        <div className="bg-white rounded-3xl shadow-2xl p-12 max-w-4xl">
-          <div className="text-center mb-8">
+      <div className="min-h-screen bg-gray-50 p-4 flex items-center justify-center">
+        <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-5xl w-full">
+          <div className="text-center mb-6">
             {/* Animated Recruitin Logo */}
-            <div className="flex justify-center mb-6">
+            <div className="flex justify-center mb-4">
               <div className="relative">
-                <div className="w-16 h-16 bg-orange-500 rounded-full animate-pulse flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-2xl">R</span>
+                <div className="w-12 h-12 bg-orange-500 rounded-full animate-pulse flex items-center justify-center shadow-lg">
+                  <span className="text-white font-bold text-lg">R</span>
                 </div>
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-orange-400 rounded-full animate-bounce"></div>
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-orange-400 rounded-full animate-bounce"></div>
               </div>
             </div>
             
-            <h1 className="text-6xl font-bold text-gray-800 mb-4 hover:scale-105 transition-transform duration-300">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-3 hover:scale-105 transition-transform duration-300">
               THE PROMPT GYM
             </h1>
-            <p className="text-2xl text-orange-500 font-medium mb-2">by Recruitin</p>
-            <div className="text-lg text-gray-600">Train je AI prompt skills - <span className="text-orange-500 font-medium">the right prompts, right now</span></div>
+            <p className="text-xl text-orange-500 font-medium mb-2">by Recruitin</p>
+            <div className="text-base text-gray-600">Train je AI prompt skills - <span className="text-orange-500 font-medium">the right prompts, right now</span></div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div className="bg-white border border-gray-200 rounded-2xl p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm">🎯</span>
-                </div>
-                <h2 className="text-2xl font-bold text-gray-800">Wat ga je leren?</h2>
+          <div className="grid md:grid-cols-3 gap-6 mb-6">
+            <div className="text-center">
+              <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span className="text-white text-sm">🎯</span>
               </div>
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start gap-3">
-                  <span className="text-green-500 font-bold">✓</span>
-                  <span>Effectieve prompts schrijven voor CV screening</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-500 font-bold">✓</span>
-                  <span>Vacatureteksten die toppers aantrekken</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-500 font-bold">✓</span>
-                  <span>Sourcing strategies met AI ondersteuning</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-500 font-bold">✓</span>
-                  <span>Ready-to-use templates voor je dagelijkse werk</span>
-                </li>
+              <h3 className="text-lg font-bold text-gray-800 mb-2">Wat ga je leren?</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>✓ Effectieve CV prompts</li>
+                <li>✓ Aantrekkelijke vacatures</li>
+                <li>✓ AI sourcing strategies</li>
+                <li>✓ Ready-to-use templates</li>
               </ul>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-2xl p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
-                  <span className="text-white text-sm">🏋️</span>
-                </div>
-                <h2 className="text-2xl font-bold text-gray-800">Hoe werkt het?</h2>
+            <div className="text-center">
+              <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span className="text-white text-sm">🏋️</span>
               </div>
-              <div className="space-y-4 text-gray-700">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold">1</div>
-                  <span>Lees het scenario en de challenge</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">2</div>
-                  <span>Schrijf je prompt in de tekstbox</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold">3</div>
-                  <span>Krijg directe feedback en tips</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold">4</div>
-                  <span>Unlock templates en ga naar het volgende level</span>
-                </div>
+              <h3 className="text-lg font-bold text-gray-800 mb-2">Hoe werkt het?</h3>
+              <div className="space-y-2 text-sm text-gray-700">
+                <div>1. Lees scenario & challenge</div>
+                <div>2. Schrijf je prompt</div>
+                <div>3. Krijg directe feedback</div>
+                <div>4. Unlock templates</div>
               </div>
             </div>
-          </div>
 
-          <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-8">
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+            <div className="text-center">
+              <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
                 <span className="text-white text-sm">🎖️</span>
               </div>
-              <h2 className="text-xl font-bold text-gray-800">De 3 Levels</h2>
-            </div>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="text-center">
-                <div className="text-4xl mb-2">🥉</div>
-                <div className="font-bold text-orange-600">Prompt Padawan</div>
-                <div className="text-sm text-gray-600">CV Screening basics</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl mb-2">⚡</div>
-                <div className="font-bold text-blue-600">Vacature Virtuoso</div>
-                <div className="text-sm text-gray-600">Job posts die converteren</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl mb-2">🔍</div>
-                <div className="font-bold text-green-600">Sourcing Sorcerer</div>
-                <div className="text-sm text-gray-600">Boolean is zo 2020</div>
+              <h3 className="text-lg font-bold text-gray-800 mb-2">3 Levels</h3>
+              <div className="space-y-1 text-sm text-gray-700">
+                <div>🥉 <span className="font-medium">Prompt Padawan</span></div>
+                <div>⚡ <span className="font-medium">Vacature Virtuoso</span></div>
+                <div>🔍 <span className="font-medium">Sourcing Sorcerer</span></div>
               </div>
             </div>
           </div>
@@ -337,13 +295,13 @@ const PromptGym = () => {
           <div className="text-center">
             <button
               onClick={() => setShowWelcome(false)}
-              className="bg-orange-500 hover:bg-orange-600 text-white px-12 py-4 rounded-2xl font-bold text-xl hover:scale-105 transform transition-all duration-300 hover:shadow-lg flex items-center gap-3 mx-auto group"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-3 rounded-2xl font-bold text-lg hover:scale-105 transform transition-all duration-300 hover:shadow-lg flex items-center gap-3 mx-auto group"
             >
-              <Sparkles className="w-6 h-6" />
+              <Sparkles className="w-5 h-5" />
               Start Training
-              <ArrowRight className="w-6 h-6" />
+              <ArrowRight className="w-5 h-5" />
             </button>
-            <p className="text-sm text-gray-500 mt-4">Duurt ongeveer 10-15 minuten</p>
+            <p className="text-sm text-gray-500 mt-3">~10-15 minuten</p>
           </div>
         </div>
         
