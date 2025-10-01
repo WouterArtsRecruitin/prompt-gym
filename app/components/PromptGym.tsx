@@ -304,32 +304,6 @@ const PromptGym = () => {
             <p className="text-sm text-gray-500 mt-3">~10-15 minuten</p>
           </div>
         </div>
-        
-        {/* Footer */}
-        <footer className="mt-12 bg-gray-100 border-t border-gray-200 py-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-6 text-sm text-gray-600 mb-3">
-              <a href="https://www.recruitin.nl" target="_blank" rel="noopener noreferrer" 
-                 className="hover:text-orange-500 transition">
-                www.recruitin.nl
-              </a>
-              <span className="text-gray-400">•</span>
-              <a href="mailto:warts@recruitin.nl" 
-                 className="hover:text-orange-500 transition">
-                warts@recruitin.nl
-              </a>
-              <span className="text-gray-400">•</span>
-              <a href="tel:0614314593" 
-                 className="hover:text-orange-500 transition">
-                06 143 145 93
-              </a>
-            </div>
-            
-            <div className="text-xs text-gray-500">
-              <p>© 2025 Recruitin • <span className="italic">the right people, right now</span></p>
-            </div>
-          </div>
-        </footer>
       </div>
     );
   }
@@ -699,32 +673,6 @@ const PromptGym = () => {
           </div>
         )}
       </div>
-      
-      {/* Footer */}
-      <footer className="mt-12 bg-gray-100 border-t border-gray-200 py-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-6 text-sm text-gray-600 mb-3">
-            <a href="https://www.recruitin.nl" target="_blank" rel="noopener noreferrer" 
-               className="hover:text-orange-500 transition">
-              www.recruitin.nl
-            </a>
-            <span className="text-gray-400">•</span>
-            <a href="mailto:warts@recruitin.nl" 
-               className="hover:text-orange-500 transition">
-              warts@recruitin.nl
-            </a>
-            <span className="text-gray-400">•</span>
-            <a href="tel:0614314593" 
-               className="hover:text-orange-500 transition">
-              06 143 145 93
-            </a>
-          </div>
-          
-          <div className="text-xs text-gray-500">
-            <p>© 2025 Recruitin • <span className="italic">the right people, right now</span></p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
