@@ -348,42 +348,27 @@ const PromptGym = () => {
         </div>
         
         {/* Footer */}
-        <footer className="mt-16 bg-gray-700 text-white p-8">
+        <footer className="mt-12 bg-gray-100 border-t border-gray-200 py-6">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">R</span>
-              </div>
-              <h3 className="text-xl font-bold">Recruitin</h3>
-            </div>
-            <p className="text-gray-300 mb-4 italic">the right people, right now</p>
-            
-            <div className="grid md:grid-cols-3 gap-4 text-sm">
-              <div>
-                <p className="text-gray-300">Website</p>
-                <a href="https://www.recruitin.nl" target="_blank" rel="noopener noreferrer" 
-                   className="text-orange-400 hover:text-orange-300 transition">
-                  www.recruitin.nl
-                </a>
-              </div>
-              <div>
-                <p className="text-gray-300">Email</p>
-                <a href="mailto:warts@recruitin.nl" 
-                   className="text-orange-400 hover:text-orange-300 transition">
-                  warts@recruitin.nl
-                </a>
-              </div>
-              <div>
-                <p className="text-gray-300">Telefoon</p>
-                <a href="tel:0614314593" 
-                   className="text-orange-400 hover:text-orange-300 transition">
-                  06 143 145 93
-                </a>
-              </div>
+            <div className="flex items-center justify-center gap-6 text-sm text-gray-600 mb-3">
+              <a href="https://www.recruitin.nl" target="_blank" rel="noopener noreferrer" 
+                 className="hover:text-orange-500 transition">
+                www.recruitin.nl
+              </a>
+              <span className="text-gray-400">•</span>
+              <a href="mailto:warts@recruitin.nl" 
+                 className="hover:text-orange-500 transition">
+                warts@recruitin.nl
+              </a>
+              <span className="text-gray-400">•</span>
+              <a href="tel:0614314593" 
+                 className="hover:text-orange-500 transition">
+                06 143 145 93
+              </a>
             </div>
             
-            <div className="mt-6 pt-4 border-t border-gray-600 text-xs text-gray-400">
-              <p>© 2025 Recruitin. Powered by AI prompt engineering.</p>
+            <div className="text-xs text-gray-500">
+              <p>© 2025 Recruitin • <span className="italic">the right people, right now</span></p>
             </div>
           </div>
         </footer>
@@ -758,42 +743,27 @@ const PromptGym = () => {
       </div>
       
       {/* Footer */}
-      <footer className="mt-16 bg-gray-700 text-white p-8">
+      <footer className="mt-12 bg-gray-100 border-t border-gray-200 py-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">R</span>
-            </div>
-            <h3 className="text-xl font-bold">Recruitin</h3>
-          </div>
-          <p className="text-gray-300 mb-4 italic">the right people, right now</p>
-          
-          <div className="grid md:grid-cols-3 gap-4 text-sm">
-            <div>
-              <p className="text-gray-300">Website</p>
-              <a href="https://www.recruitin.nl" target="_blank" rel="noopener noreferrer" 
-                 className="text-orange-400 hover:text-orange-300 transition">
-                www.recruitin.nl
-              </a>
-            </div>
-            <div>
-              <p className="text-gray-300">Email</p>
-              <a href="mailto:warts@recruitin.nl" 
-                 className="text-orange-400 hover:text-orange-300 transition">
-                warts@recruitin.nl
-              </a>
-            </div>
-            <div>
-              <p className="text-gray-300">Telefoon</p>
-              <a href="tel:0614314593" 
-                 className="text-orange-400 hover:text-orange-300 transition">
-                06 143 145 93
-              </a>
-            </div>
+          <div className="flex items-center justify-center gap-6 text-sm text-gray-600 mb-3">
+            <a href="https://www.recruitin.nl" target="_blank" rel="noopener noreferrer" 
+               className="hover:text-orange-500 transition">
+              www.recruitin.nl
+            </a>
+            <span className="text-gray-400">•</span>
+            <a href="mailto:warts@recruitin.nl" 
+               className="hover:text-orange-500 transition">
+              warts@recruitin.nl
+            </a>
+            <span className="text-gray-400">•</span>
+            <a href="tel:0614314593" 
+               className="hover:text-orange-500 transition">
+              06 143 145 93
+            </a>
           </div>
           
-          <div className="mt-6 pt-4 border-t border-gray-600 text-xs text-gray-400">
-            <p>© 2025 Recruitin. Powered by AI prompt engineering.</p>
+          <div className="text-xs text-gray-500">
+            <p>© 2025 Recruitin • <span className="italic">the right people, right now</span></p>
           </div>
         </div>
       </footer>
