@@ -504,7 +504,6 @@ const PromptGym = () => {
         </div>
 
         <div className="max-w-4xl mx-auto space-y-8">
-          {/* Main Challenge Card */}
           <div className="bg-white rounded-3xl shadow-2xl p-8">
             <div className="text-center mb-8">
               <div className={`inline-flex items-center gap-4 bg-gradient-to-r ${currentLevelData.color} text-white px-8 py-4 rounded-2xl mb-6`}>
@@ -589,7 +588,6 @@ const PromptGym = () => {
             )}
           </div>
 
-          {/* Side Panel for Templates */}
           {unlockedTemplates.length > 0 && (
             <div className="text-center">
               <button
@@ -667,7 +665,8 @@ const PromptGym = () => {
           </div>
         )}
       </div>
-    );
-  };
+    </div>
+  );
+};
 
 export default PromptGym;
