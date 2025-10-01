@@ -666,11 +666,8 @@ const PromptGym = () => {
             </div>
           </div>
         )}
-          </div>
-        </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
 export default PromptGym;
