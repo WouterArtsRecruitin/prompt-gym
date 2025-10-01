@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { CheckCircle2, XCircle, Trophy, Sparkles, ArrowRight, RefreshCw, Copy, Target, Book, Star } from 'lucide-react';
 
 const PromptGym = () => {
+  const [showWelcome, setShowWelcome] = useState(true);
   const [currentLevel, setCurrentLevel] = useState(0);
   const [userPrompt, setUserPrompt] = useState('');
   const [feedback, setFeedback] = useState<any>(null);
@@ -229,6 +230,105 @@ const PromptGym = () => {
   const currentLevelData = levels[currentLevel];
   const progressPercentage = ((currentLevel) / levels.length) * 100;
 
+  if (showWelcome) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 p-8 flex items-center justify-center">
+        <div className="bg-white rounded-3xl shadow-2xl p-12 max-w-4xl">
+          <div className="text-center mb-8">
+            <h1 className="text-6xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+              THE PROMPT GYM
+            </h1>
+            <p className="text-2xl text-gray-600 mb-2">Where Recruiters Become Prompt Athletes 💪</p>
+            <div className="text-lg text-gray-500">Train je Claude skills in 3 levels</div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl p-6">
+              <h2 className="text-2xl font-bold text-purple-700 mb-4 flex items-center gap-2">
+                🎯 Wat ga je leren?
+              </h2>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span>Effectieve prompts schrijven voor CV screening</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span>Vacatureteksten die toppers aantrekken</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span>Sourcing strategies met AI ondersteuning</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-500 font-bold">✓</span>
+                  <span>Ready-to-use templates voor je dagelijkse werk</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-gradient-to-br from-orange-100 to-yellow-100 rounded-2xl p-6">
+              <h2 className="text-2xl font-bold text-orange-700 mb-4 flex items-center gap-2">
+                🏋️ Hoe werkt het?
+              </h2>
+              <div className="space-y-4 text-gray-700">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">1</div>
+                  <span>Lees het scenario en de challenge</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">2</div>
+                  <span>Schrijf je prompt in de tekstbox</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold">3</div>
+                  <span>Krijg directe feedback en tips</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold">4</div>
+                  <span>Unlock templates en ga naar het volgende level</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-6 mb-8">
+            <h2 className="text-xl font-bold text-gray-700 mb-4 text-center">🎖️ De 3 Levels</h2>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="text-center">
+                <div className="text-4xl mb-2">🥉</div>
+                <div className="font-bold text-purple-600">Prompt Padawan</div>
+                <div className="text-sm text-gray-600">CV Screening basics</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl mb-2">⚡</div>
+                <div className="font-bold text-blue-600">Vacature Virtuoso</div>
+                <div className="text-sm text-gray-600">Job posts die converteren</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl mb-2">🔍</div>
+                <div className="font-bold text-green-600">Sourcing Sorcerer</div>
+                <div className="text-sm text-gray-600">Boolean is zo 2020</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <button
+              onClick={() => setShowWelcome(false)}
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-12 py-4 rounded-2xl font-bold text-xl hover:scale-105 transition flex items-center gap-3 mx-auto"
+            >
+              <Sparkles className="w-6 h-6" />
+              Start Training
+              <ArrowRight className="w-6 h-6" />
+            </button>
+            <p className="text-sm text-gray-500 mt-4">Duurt ongeveer 10-15 minuten</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (gameComplete) {
     const totalPossibleScore = levels.length * 100;
     const finalPercentage = Math.round((score / totalPossibleScore) * 100);
@@ -403,68 +503,51 @@ const PromptGym = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="space-y-6">
-            <div className={`bg-gradient-to-br ${currentLevelData.color} rounded-2xl shadow-xl p-6 text-white`}>
-              <div className="text-5xl mb-4">{currentLevelData.icon}</div>
-              <h2 className="text-2xl font-bold mb-2">{currentLevelData.title}</h2>
-              <p className="text-white/90 text-sm">{currentLevelData.description}</p>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
-                <Target className="w-5 h-5 text-purple-600" />
-                Scenario
-              </h3>
-              <p className="text-gray-700 text-sm mb-4">{currentLevelData.scenario}</p>
-              
-              <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-indigo-600" />
-                Challenge
-              </h3>
-              <p className="text-gray-700 text-sm">{currentLevelData.challenge}</p>
-            </div>
-
-            {showHint && (
-              <div className="bg-yellow-50 border-2 border-yellow-300 rounded-2xl p-6">
-                <h3 className="font-bold text-yellow-800 mb-3">💡 Hints</h3>
-                <ul className="space-y-2">
-                  {currentLevelData.hints.map((hint, idx) => (
-                    <li key={idx} className="text-sm text-yellow-900">• {hint}</li>
-                  ))}
-                </ul>
+        <div className="max-w-4xl mx-auto space-y-8">
+          {/* Main Challenge Card */}
+          <div className="bg-white rounded-3xl shadow-2xl p-8">
+            <div className="text-center mb-8">
+              <div className={`inline-flex items-center gap-4 bg-gradient-to-r ${currentLevelData.color} text-white px-8 py-4 rounded-2xl mb-6`}>
+                <div className="text-4xl">{currentLevelData.icon}</div>
+                <div className="text-left">
+                  <h2 className="text-2xl font-bold">{currentLevelData.title}</h2>
+                  <p className="text-white/90">{currentLevelData.description}</p>
+                </div>
               </div>
-            )}
+            </div>
 
-            {unlockedTemplates.length > 0 && (
-              <button
-                onClick={() => setShowTemplate(true)}
-                className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-3 rounded-xl font-semibold hover:scale-105 transition flex items-center justify-center gap-2"
-              >
-                <Book className="w-5 h-5" />
-                Templates ({unlockedTemplates.length})
-              </button>
-            )}
-          </div>
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 mb-8">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
+                <Target className="w-6 h-6 text-blue-600" />
+                Jouw Opdracht
+              </h3>
+              <div className="bg-white rounded-xl p-6 mb-6">
+                <h4 className="font-bold text-gray-700 mb-3">📋 Scenario:</h4>
+                <p className="text-gray-700 text-lg leading-relaxed">{currentLevelData.scenario}</p>
+              </div>
+              <div className="bg-gradient-to-r from-purple-100 to-indigo-100 rounded-xl p-6">
+                <h4 className="font-bold text-purple-700 mb-3">🎯 Challenge:</h4>
+                <p className="text-purple-800 text-lg font-medium leading-relaxed">{currentLevelData.challenge}</p>
+              </div>
+            </div>
 
-          <div className="lg:col-span-2 space-y-6">
-            <div className="bg-white rounded-2xl shadow-xl p-6">
-              <h3 className="font-bold text-gray-800 mb-4 text-xl">Schrijf je prompt:</h3>
+            <div className="bg-gray-50 rounded-2xl p-6 mb-8">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">✏️ Schrijf hier je prompt:</h3>
               <textarea
                 value={userPrompt}
                 onChange={(e) => setUserPrompt(e.target.value)}
-                placeholder="Type hier je prompt..."
-                className="w-full h-48 p-4 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none resize-none"
+                placeholder="Begin met: 'Je bent een ervaren recruiter...' en schrijf je volledige prompt hier..."
+                className="w-full h-40 p-6 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none resize-none text-lg"
               />
               
-              <div className="flex gap-3 mt-4">
+              <div className="flex gap-4 mt-6">
                 <button
                   onClick={handleSubmit}
                   disabled={!userPrompt.trim()}
-                  className="flex-1 bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-4 rounded-xl font-bold text-lg hover:scale-105 transition disabled:opacity-50 flex items-center justify-center gap-2"
+                  className="flex-1 bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-4 px-8 rounded-xl font-bold text-lg hover:scale-105 transition disabled:opacity-50 disabled:hover:scale-100 flex items-center justify-center gap-3"
                 >
-                  <Sparkles className="w-5 h-5" />
-                  Check Prompt
+                  <Sparkles className="w-6 h-6" />
+                  Check Mijn Prompt
                 </button>
                 {attempts > 0 && (
                   <button
@@ -472,69 +555,117 @@ const PromptGym = () => {
                       setUserPrompt('');
                       setFeedback(null);
                     }}
-                    className="px-6 bg-gray-100 rounded-xl hover:bg-gray-200"
+                    className="px-6 bg-gray-100 hover:bg-gray-200 rounded-xl transition flex items-center justify-center"
+                    title="Reset"
                   >
-                    <RefreshCw className="w-5 h-5" />
+                    <RefreshCw className="w-6 h-6" />
                   </button>
                 )}
               </div>
+
+              {attempts >= 2 && !showHint && (
+                <button
+                  onClick={() => setShowHint(true)}
+                  className="w-full mt-4 bg-yellow-100 hover:bg-yellow-200 text-yellow-800 py-3 rounded-xl font-semibold transition"
+                >
+                  💡 Geef me een hint
+                </button>
+              )}
             </div>
 
-            {feedback && (
-              <div className={`rounded-2xl shadow-xl p-6 ${
-                feedback.type === 'pass' ? 'bg-green-50 border-2 border-green-300' : 'bg-orange-50 border-2 border-orange-300'
-              }`}>
-                <div className="flex items-start gap-4 mb-4">
-                  {feedback.type === 'pass' ? <CheckCircle2 className="w-12 h-12 text-green-600" /> : <XCircle className="w-12 h-12 text-orange-600" />}
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2">{feedback.message}</h3>
-                    <div className="text-4xl font-bold">{feedback.percentage}%</div>
-                  </div>
-                </div>
-
-                <div className="space-y-3 mb-6">
-                  {feedback.details.map((detail: any, idx: number) => (
-                    <div key={idx} className={`p-4 rounded-xl ${detail.passed ? 'bg-green-100' : 'bg-white'}`}>
-                      <p className="text-sm">{detail.passed ? '✓ Goed!' : detail.message}</p>
+            {showHint && (
+              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-300 rounded-2xl p-8 mb-8">
+                <h3 className="text-xl font-bold text-yellow-800 mb-6 flex items-center gap-2">
+                  💡 Hints om je te helpen:
+                </h3>
+                <div className="grid gap-4">
+                  {currentLevelData.hints.map((hint, idx) => (
+                    <div key={idx} className="bg-white rounded-lg p-4 border-l-4 border-yellow-400">
+                      <p className="text-gray-800">{hint}</p>
                     </div>
                   ))}
                 </div>
+              </div>
+            )}
+          </div>
 
-                {feedback.type === 'pass' && (
-                  <>
-                    <div className="bg-white rounded-xl p-6 mb-6">
-                      <h4 className="font-bold mb-3 flex items-center gap-2">
-                        <Star className="w-5 h-5 text-yellow-500" />
-                        Goed voorbeeld:
-                      </h4>
-                      <pre className="text-xs bg-gray-50 p-4 rounded-lg whitespace-pre-wrap">
+          {/* Side Panel for Templates */}
+          {unlockedTemplates.length > 0 && (
+            <div className="text-center">
+              <button
+                onClick={() => setShowTemplate(true)}
+                className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition flex items-center justify-center gap-3 mx-auto"
+              >
+                <Book className="w-6 h-6" />
+                Bekijk Mijn Templates ({unlockedTemplates.length})
+              </button>
+            </div>
+          )}
+        </div>
+
+        {feedback && (
+          <div className="max-w-4xl mx-auto">
+            <div className={`rounded-3xl shadow-2xl p-8 ${
+              feedback.type === 'pass' ? 'bg-green-50 border-2 border-green-300' : 'bg-orange-50 border-2 border-orange-300'
+            }`}>
+              <div className="text-center mb-8">
+                <div className="flex items-center justify-center gap-4 mb-4">
+                  {feedback.type === 'pass' ? <CheckCircle2 className="w-16 h-16 text-green-600" /> : <XCircle className="w-16 h-16 text-orange-600" />}
+                  <div>
+                    <h3 className="text-3xl font-bold mb-2">{feedback.message}</h3>
+                    <div className="text-5xl font-bold">{feedback.percentage}%</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid gap-4 mb-8">
+                {feedback.details.map((detail: any, idx: number) => (
+                  <div key={idx} className={`p-6 rounded-xl border-2 ${
+                    detail.passed ? 'bg-green-100 border-green-300' : 'bg-white border-orange-300'
+                  }`}>
+                    <p className="text-lg font-medium">{detail.passed ? '✅ Perfect!' : detail.message}</p>
+                  </div>
+                ))}
+              </div>
+
+              {feedback.type === 'pass' && (
+                <>
+                  <div className="bg-white rounded-2xl p-8 mb-8 border-2 border-green-200">
+                    <h4 className="text-xl font-bold mb-6 flex items-center gap-3">
+                      <Star className="w-6 h-6 text-yellow-500" />
+                      Perfecte prompt voorbeeld:
+                    </h4>
+                    <div className="bg-gray-50 p-6 rounded-xl">
+                      <pre className="text-sm whitespace-pre-wrap font-mono leading-relaxed">
                         {currentLevelData.goodExample}
                       </pre>
                     </div>
+                  </div>
 
-                    <button
-                      onClick={nextLevel}
-                      className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-4 rounded-xl font-bold text-lg hover:scale-105 transition flex items-center justify-center gap-2"
-                    >
-                      {currentLevel < levels.length - 1 ? (
-                        <>Volgende Level <ArrowRight className="w-5 h-5" /></>
-                      ) : (
-                        <>Voltooien <Trophy className="w-5 h-5" /></>
-                      )}
-                    </button>
-                  </>
-                )}
-
-                {feedback.type === 'improve' && (
                   <button
-                    onClick={() => setFeedback(null)}
-                    className="w-full bg-orange-500 text-white py-4 rounded-xl font-bold text-lg hover:scale-105 transition"
+                    onClick={nextLevel}
+                    className="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white py-6 rounded-2xl font-bold text-xl hover:scale-105 transition flex items-center justify-center gap-3"
                   >
-                    Probeer Opnieuw
+                    {currentLevel < levels.length - 1 ? (
+                      <>🎉 Ga naar het volgende level! <ArrowRight className="w-6 h-6" /></>
+                    ) : (
+                      <>🏆 Voltooi de training! <Trophy className="w-6 h-6" /></>
+                    )}
                   </button>
-                )}
-              </div>
-            )}
+                </>
+              )}
+
+              {feedback.type === 'improve' && (
+                <button
+                  onClick={() => setFeedback(null)}
+                  className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white py-6 rounded-2xl font-bold text-xl hover:scale-105 transition"
+                >
+                  🔄 Probeer Opnieuw
+                </button>
+              )}
+            </div>
+          </div>
+        )}
           </div>
         </div>
       </div>
