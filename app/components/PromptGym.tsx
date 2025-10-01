@@ -232,21 +232,34 @@ const PromptGym = () => {
 
   if (showWelcome) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-gray-50 p-8 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-50 p-8 flex items-center justify-center">
         <div className="bg-white rounded-3xl shadow-2xl p-12 max-w-4xl">
           <div className="text-center mb-8">
-            <h1 className="text-6xl font-bold text-gray-700 mb-4">
+            {/* Animated Recruitin Logo */}
+            <div className="flex justify-center mb-6">
+              <div className="relative">
+                <div className="w-16 h-16 bg-orange-500 rounded-full animate-pulse flex items-center justify-center shadow-lg">
+                  <span className="text-white font-bold text-2xl">R</span>
+                </div>
+                <div className="absolute -top-1 -right-1 w-4 h-4 bg-orange-400 rounded-full animate-bounce"></div>
+              </div>
+            </div>
+            
+            <h1 className="text-6xl font-bold text-gray-800 mb-4 hover:scale-105 transition-transform duration-300">
               THE PROMPT GYM
             </h1>
             <p className="text-2xl text-orange-500 font-medium mb-2">by Recruitin</p>
-            <div className="text-lg text-gray-600">Train je AI prompt skills - the right prompts, right now</div>
+            <div className="text-lg text-gray-600">Train je AI prompt skills - <span className="text-orange-500 font-medium">the right prompts, right now</span></div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div className="bg-gradient-to-br from-orange-100 to-gray-100 rounded-2xl p-6">
-              <h2 className="text-2xl font-bold text-orange-600 mb-4 flex items-center gap-2">
-                🎯 Wat ga je leren?
-              </h2>
+            <div className="bg-white border border-gray-200 rounded-2xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-sm">🎯</span>
+                </div>
+                <h2 className="text-2xl font-bold text-gray-800">Wat ga je leren?</h2>
+              </div>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start gap-3">
                   <span className="text-green-500 font-bold">✓</span>
@@ -267,10 +280,13 @@ const PromptGym = () => {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-br from-orange-100 to-yellow-100 rounded-2xl p-6">
-              <h2 className="text-2xl font-bold text-orange-700 mb-4 flex items-center gap-2">
-                🏋️ Hoe werkt het?
-              </h2>
+            <div className="bg-white border border-gray-200 rounded-2xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-sm">🏋️</span>
+                </div>
+                <h2 className="text-2xl font-bold text-gray-800">Hoe werkt het?</h2>
+              </div>
               <div className="space-y-4 text-gray-700">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold">1</div>
@@ -292,8 +308,13 @@ const PromptGym = () => {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-6 mb-8">
-            <h2 className="text-xl font-bold text-gray-700 mb-4 text-center">🎖️ De 3 Levels</h2>
+          <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-8">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                <span className="text-white text-sm">🎖️</span>
+              </div>
+              <h2 className="text-xl font-bold text-gray-800">De 3 Levels</h2>
+            </div>
             <div className="grid grid-cols-3 gap-4">
               <div className="text-center">
                 <div className="text-4xl mb-2">🥉</div>
@@ -316,7 +337,7 @@ const PromptGym = () => {
           <div className="text-center">
             <button
               onClick={() => setShowWelcome(false)}
-              className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-12 py-4 rounded-2xl font-bold text-xl hover:scale-105 transition flex items-center gap-3 mx-auto"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-12 py-4 rounded-2xl font-bold text-xl hover:scale-105 transform transition-all duration-300 hover:shadow-lg flex items-center gap-3 mx-auto group"
             >
               <Sparkles className="w-6 h-6" />
               Start Training
@@ -379,7 +400,7 @@ const PromptGym = () => {
     else if (finalPercentage >= 75) badge = "💎 Prompt Master";
     
     return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-gray-50 p-8 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-50 p-8 flex items-center justify-center">
         <div className="bg-white rounded-3xl shadow-2xl p-12 text-center max-w-2xl">
           <Trophy className="w-24 h-24 mx-auto text-yellow-500 mb-4" />
           <h1 className="text-5xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent mb-4">
@@ -504,7 +525,7 @@ const PromptGym = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-gray-50 p-8">
+    <div className="min-h-screen bg-gray-50 p-8">
       {showConfetti && (
         <div className="fixed inset-0 pointer-events-none z-50">
           {[...Array(20)].map((_, i) => (
@@ -525,7 +546,14 @@ const PromptGym = () => {
 
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
-          <h1 className="text-5xl font-bold text-gray-700 mb-4">
+          {/* Animated Mini Logo */}
+          <div className="flex justify-center mb-4">
+            <div className="w-12 h-12 bg-orange-500 rounded-full animate-pulse flex items-center justify-center shadow-lg">
+              <span className="text-white font-bold text-lg">R</span>
+            </div>
+          </div>
+          
+          <h1 className="text-5xl font-bold text-gray-800 mb-4">
             THE PROMPT GYM
           </h1>
           <p className="text-orange-500 text-lg font-medium">by Recruitin - the right prompts, right now</p>
@@ -540,9 +568,11 @@ const PromptGym = () => {
             </div>
             <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
               <div 
-                className="h-full bg-gradient-to-r from-orange-500 to-orange-600 transition-all duration-500"
+                className="h-full bg-orange-500 transition-all duration-1000 ease-out relative"
                 style={{ width: `${progressPercentage}%` }}
-              />
+              >
+                <div className="absolute inset-0 bg-orange-400 opacity-50 animate-pulse"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -551,10 +581,10 @@ const PromptGym = () => {
           {levels.map((level, idx) => (
             <div
               key={idx}
-              className={`px-4 py-2 rounded-full ${
-                idx < currentLevel ? 'bg-green-100 text-green-700' :
-                idx === currentLevel ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white scale-110' :
-                'bg-gray-100 text-gray-400'
+              className={`px-4 py-2 rounded-full transition-all duration-500 transform ${
+                idx < currentLevel ? 'bg-green-100 text-green-700 scale-95' :
+                idx === currentLevel ? 'bg-orange-500 text-white scale-110 animate-pulse shadow-lg' :
+                'bg-gray-100 text-gray-400 scale-90'
               }`}
             >
               <span className="text-xl">{level.icon}</span>
@@ -574,11 +604,13 @@ const PromptGym = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 mb-8">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
-                <Target className="w-6 h-6 text-blue-600" />
-                Jouw Opdracht
-              </h3>
+            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 mb-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                  <Target className="w-4 h-4 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800">Jouw Opdracht</h3>
+              </div>
               <div className="bg-white rounded-xl p-6 mb-6">
                 <h4 className="font-bold text-gray-700 mb-3">📋 Scenario:</h4>
                 <p className="text-gray-700 text-lg leading-relaxed">{currentLevelData.scenario}</p>
