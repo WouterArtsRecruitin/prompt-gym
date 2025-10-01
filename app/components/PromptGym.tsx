@@ -325,6 +325,47 @@ const PromptGym = () => {
             <p className="text-sm text-gray-500 mt-4">Duurt ongeveer 10-15 minuten</p>
           </div>
         </div>
+        
+        {/* Footer */}
+        <footer className="mt-16 bg-gray-700 text-white p-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-sm">R</span>
+              </div>
+              <h3 className="text-xl font-bold">Recruitin</h3>
+            </div>
+            <p className="text-gray-300 mb-4 italic">the right people, right now</p>
+            
+            <div className="grid md:grid-cols-3 gap-4 text-sm">
+              <div>
+                <p className="text-gray-300">Website</p>
+                <a href="https://www.recruitin.nl" target="_blank" rel="noopener noreferrer" 
+                   className="text-orange-400 hover:text-orange-300 transition">
+                  www.recruitin.nl
+                </a>
+              </div>
+              <div>
+                <p className="text-gray-300">Email</p>
+                <a href="mailto:warts@recruitin.nl" 
+                   className="text-orange-400 hover:text-orange-300 transition">
+                  warts@recruitin.nl
+                </a>
+              </div>
+              <div>
+                <p className="text-gray-300">Telefoon</p>
+                <a href="tel:0614314593" 
+                   className="text-orange-400 hover:text-orange-300 transition">
+                  06 143 145 93
+                </a>
+              </div>
+            </div>
+            
+            <div className="mt-6 pt-4 border-t border-gray-600 text-xs text-gray-400">
+              <p>© 2025 Recruitin. Powered by AI prompt engineering.</p>
+            </div>
+          </div>
+        </footer>
       </div>
     );
   }
@@ -372,13 +413,31 @@ const PromptGym = () => {
           </button>
 
           <div>
-            <button
-              onClick={() => window.location.reload()}
-              className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition flex items-center gap-2 mx-auto"
-            >
-              <RefreshCw className="w-5 h-5" />
-              Speel Opnieuw
-            </button>
+            <div className="space-y-4">
+              <button
+                onClick={() => window.location.reload()}
+                className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition flex items-center justify-center gap-2"
+              >
+                <RefreshCw className="w-5 h-5" />
+                Speel Opnieuw
+              </button>
+              
+              <a 
+                href="https://www.recruitin.nl" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block w-full bg-gray-600 hover:bg-gray-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition text-center"
+              >
+                🚀 Meer AI recruitment tools ontdekken
+              </a>
+              
+              <a 
+                href="mailto:warts@recruitin.nl?subject=Interesse in AI Recruitment Training" 
+                className="block w-full bg-gray-100 hover:bg-gray-200 text-gray-700 px-8 py-3 rounded-xl font-semibold transition text-center"
+              >
+                📧 Contact voor bedrijfstraining
+              </a>
+            </div>
           </div>
         </div>
 
@@ -665,6 +724,47 @@ const PromptGym = () => {
           </div>
         )}
       </div>
+      
+      {/* Footer */}
+      <footer className="mt-16 bg-gray-700 text-white p-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+              <span className="text-white font-bold text-sm">R</span>
+            </div>
+            <h3 className="text-xl font-bold">Recruitin</h3>
+          </div>
+          <p className="text-gray-300 mb-4 italic">the right people, right now</p>
+          
+          <div className="grid md:grid-cols-3 gap-4 text-sm">
+            <div>
+              <p className="text-gray-300">Website</p>
+              <a href="https://www.recruitin.nl" target="_blank" rel="noopener noreferrer" 
+                 className="text-orange-400 hover:text-orange-300 transition">
+                www.recruitin.nl
+              </a>
+            </div>
+            <div>
+              <p className="text-gray-300">Email</p>
+              <a href="mailto:warts@recruitin.nl" 
+                 className="text-orange-400 hover:text-orange-300 transition">
+                warts@recruitin.nl
+              </a>
+            </div>
+            <div>
+              <p className="text-gray-300">Telefoon</p>
+              <a href="tel:0614314593" 
+                 className="text-orange-400 hover:text-orange-300 transition">
+                06 143 145 93
+              </a>
+            </div>
+          </div>
+          
+          <div className="mt-6 pt-4 border-t border-gray-600 text-xs text-gray-400">
+            <p>© 2025 Recruitin. Powered by AI prompt engineering.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
