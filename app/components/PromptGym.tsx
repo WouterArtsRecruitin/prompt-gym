@@ -22,7 +22,7 @@ const PromptGym = () => {
       id: 0,
       title: "Prompt Padawan",
       icon: "🥉",
-      color: "from-purple-500 to-indigo-600",
+      color: "from-orange-500 to-gray-600",
       description: "Leer de basis zonder je vingers te breken",
       scenario: "Je wilt Claude vragen om een korte samenvatting te maken van een CV voor eerste screening.",
       challenge: "Schrijf een prompt die Claude duidelijk vertelt WAT (samenvatting), HOE (format), en WAAROM (doel).",
@@ -70,7 +70,7 @@ const PromptGym = () => {
       id: 1,
       title: "Vacature Virtuoso",
       icon: "⚡",
-      color: "from-blue-500 to-cyan-600",
+      color: "from-gray-500 to-gray-700",
       description: "Job descriptions die kandidaten doen swipe-right",
       scenario: "Je moet een tech vacature schrijven die toppers aanspreekt én realistisch is.",
       challenge: "Schrijf een prompt die Claude helpt een vacature te maken die authentiek, aantrekkelijk en eerlijk is.",
@@ -118,7 +118,7 @@ const PromptGym = () => {
       id: 2,
       title: "Sourcing Sorcerer",
       icon: "🔍",
-      color: "from-emerald-500 to-teal-600",
+      color: "from-orange-600 to-gray-600",
       description: "Boolean strings zijn zo 2020",
       scenario: "Je wilt Claude helpen een ideale candidate persona te bouwen voor targeted sourcing.",
       challenge: "Schrijf een prompt die een persona maakt + sourcing strategies + waar je kandidaten vindt.",
@@ -232,19 +232,19 @@ const PromptGym = () => {
 
   if (showWelcome) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 p-8 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-gray-50 p-8 flex items-center justify-center">
         <div className="bg-white rounded-3xl shadow-2xl p-12 max-w-4xl">
           <div className="text-center mb-8">
-            <h1 className="text-6xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+            <h1 className="text-6xl font-bold text-gray-700 mb-4">
               THE PROMPT GYM
             </h1>
-            <p className="text-2xl text-gray-600 mb-2">Where Recruiters Become Prompt Athletes 💪</p>
-            <div className="text-lg text-gray-500">Train je Claude skills in 3 levels</div>
+            <p className="text-2xl text-orange-500 font-medium mb-2">by Recruitin</p>
+            <div className="text-lg text-gray-600">Train je AI prompt skills - the right prompts, right now</div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div className="bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl p-6">
-              <h2 className="text-2xl font-bold text-purple-700 mb-4 flex items-center gap-2">
+            <div className="bg-gradient-to-br from-orange-100 to-gray-100 rounded-2xl p-6">
+              <h2 className="text-2xl font-bold text-orange-600 mb-4 flex items-center gap-2">
                 🎯 Wat ga je leren?
               </h2>
               <ul className="space-y-3 text-gray-700">
@@ -273,7 +273,7 @@ const PromptGym = () => {
               </h2>
               <div className="space-y-4 text-gray-700">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">1</div>
+                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold">1</div>
                   <span>Lees het scenario en de challenge</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -297,7 +297,7 @@ const PromptGym = () => {
             <div className="grid grid-cols-3 gap-4">
               <div className="text-center">
                 <div className="text-4xl mb-2">🥉</div>
-                <div className="font-bold text-purple-600">Prompt Padawan</div>
+                <div className="font-bold text-orange-600">Prompt Padawan</div>
                 <div className="text-sm text-gray-600">CV Screening basics</div>
               </div>
               <div className="text-center">
@@ -316,7 +316,7 @@ const PromptGym = () => {
           <div className="text-center">
             <button
               onClick={() => setShowWelcome(false)}
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-12 py-4 rounded-2xl font-bold text-xl hover:scale-105 transition flex items-center gap-3 mx-auto"
+              className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-12 py-4 rounded-2xl font-bold text-xl hover:scale-105 transition flex items-center gap-3 mx-auto"
             >
               <Sparkles className="w-6 h-6" />
               Start Training
@@ -338,19 +338,19 @@ const PromptGym = () => {
     else if (finalPercentage >= 75) badge = "💎 Prompt Master";
     
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 p-8 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-gray-50 p-8 flex items-center justify-center">
         <div className="bg-white rounded-3xl shadow-2xl p-12 text-center max-w-2xl">
           <Trophy className="w-24 h-24 mx-auto text-yellow-500 mb-4" />
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent mb-4">
             GEFELICITEERD!
           </h1>
           <p className="text-2xl text-gray-700 mb-2">Je hebt de Prompt Gym voltooid! 🎉</p>
-          <div className="text-6xl font-bold text-purple-600 my-6">{badge}</div>
+          <div className="text-6xl font-bold text-orange-600 my-6">{badge}</div>
 
-          <div className="bg-gradient-to-r from-purple-100 to-indigo-100 rounded-2xl p-6 mb-8">
+          <div className="bg-gradient-to-r from-orange-100 to-gray-100 rounded-2xl p-6 mb-8">
             <div className="grid grid-cols-3 gap-6">
               <div>
-                <div className="text-4xl font-bold text-purple-600">{score}</div>
+                <div className="text-4xl font-bold text-orange-600">{score}</div>
                 <div className="text-sm text-gray-600">Score</div>
               </div>
               <div>
@@ -366,7 +366,7 @@ const PromptGym = () => {
 
           <button
             onClick={() => setShowTemplate(true)}
-            className="mb-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition"
+            className="mb-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition"
           >
             📚 Bekijk Templates ({unlockedTemplates.length})
           </button>
@@ -374,7 +374,7 @@ const PromptGym = () => {
           <div>
             <button
               onClick={() => window.location.reload()}
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition flex items-center gap-2 mx-auto"
+              className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition flex items-center gap-2 mx-auto"
             >
               <RefreshCw className="w-5 h-5" />
               Speel Opnieuw
@@ -393,7 +393,7 @@ const PromptGym = () => {
               <div className="space-y-8">
                 {unlockedTemplates.map((templates, idx) => (
                   <div key={idx} className="border-b pb-8">
-                    <h3 className="text-xl font-bold text-purple-600 mb-4">
+                    <h3 className="text-xl font-bold text-orange-600 mb-4">
                       Level {idx + 1}: {levels[idx].title}
                     </h3>
                     
@@ -405,7 +405,7 @@ const PromptGym = () => {
                             copyTemplate(templates.basis.prompt);
                             alert('✅ Template gekopieerd!');
                           }}
-                          className="flex items-center gap-2 text-sm bg-purple-600 text-white px-3 py-1 rounded-lg"
+                          className="flex items-center gap-2 text-sm bg-orange-500 text-white px-3 py-1 rounded-lg"
                         >
                           <Copy className="w-4 h-4" />
                           Copy
@@ -445,7 +445,7 @@ const PromptGym = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-indigo-50 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-gray-50 p-8">
       {showConfetti && (
         <div className="fixed inset-0 pointer-events-none z-50">
           {[...Array(20)].map((_, i) => (
@@ -466,22 +466,22 @@ const PromptGym = () => {
 
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+          <h1 className="text-5xl font-bold text-gray-700 mb-4">
             THE PROMPT GYM
           </h1>
-          <p className="text-gray-600 text-lg">Where Recruiters Become Prompt Athletes 💪</p>
+          <p className="text-orange-500 text-lg font-medium">by Recruitin - the right prompts, right now</p>
           
           <div className="mt-6 bg-white rounded-2xl shadow-lg p-4 max-w-2xl mx-auto">
             <div className="flex justify-between items-center mb-3">
               <div className="flex items-center gap-3">
-                <span className="text-2xl font-bold text-purple-600">{score}</span>
+                <span className="text-2xl font-bold text-orange-600">{score}</span>
                 <span className="text-sm text-gray-500">points</span>
               </div>
               <div className="text-sm text-gray-600">Level {currentLevel + 1}/{levels.length}</div>
             </div>
             <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
               <div 
-                className="h-full bg-gradient-to-r from-purple-600 to-indigo-600 transition-all duration-500"
+                className="h-full bg-gradient-to-r from-orange-500 to-orange-600 transition-all duration-500"
                 style={{ width: `${progressPercentage}%` }}
               />
             </div>
@@ -494,7 +494,7 @@ const PromptGym = () => {
               key={idx}
               className={`px-4 py-2 rounded-full ${
                 idx < currentLevel ? 'bg-green-100 text-green-700' :
-                idx === currentLevel ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white scale-110' :
+                idx === currentLevel ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white scale-110' :
                 'bg-gray-100 text-gray-400'
               }`}
             >
@@ -524,8 +524,8 @@ const PromptGym = () => {
                 <h4 className="font-bold text-gray-700 mb-3">📋 Scenario:</h4>
                 <p className="text-gray-700 text-lg leading-relaxed">{currentLevelData.scenario}</p>
               </div>
-              <div className="bg-gradient-to-r from-purple-100 to-indigo-100 rounded-xl p-6">
-                <h4 className="font-bold text-purple-700 mb-3">🎯 Challenge:</h4>
+              <div className="bg-gradient-to-r from-orange-100 to-gray-100 rounded-xl p-6">
+                <h4 className="font-bold text-orange-600 mb-3">🎯 Challenge:</h4>
                 <p className="text-purple-800 text-lg font-medium leading-relaxed">{currentLevelData.challenge}</p>
               </div>
             </div>
@@ -543,7 +543,7 @@ const PromptGym = () => {
                 <button
                   onClick={handleSubmit}
                   disabled={!userPrompt.trim()}
-                  className="flex-1 bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-4 px-8 rounded-xl font-bold text-lg hover:scale-105 transition disabled:opacity-50 disabled:hover:scale-100 flex items-center justify-center gap-3"
+                  className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 px-8 rounded-xl font-bold text-lg hover:scale-105 transition disabled:opacity-50 disabled:hover:scale-100 flex items-center justify-center gap-3"
                 >
                   <Sparkles className="w-6 h-6" />
                   Check Mijn Prompt
@@ -592,7 +592,7 @@ const PromptGym = () => {
             <div className="text-center">
               <button
                 onClick={() => setShowTemplate(true)}
-                className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition flex items-center justify-center gap-3 mx-auto"
+                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition flex items-center justify-center gap-3 mx-auto"
               >
                 <Book className="w-6 h-6" />
                 Bekijk Mijn Templates ({unlockedTemplates.length})
