@@ -46,12 +46,12 @@ export function FeedbackPanel({
           {feedback.details.map((detail, idx) => (
             <div
               key={idx}
-              className={`p-4 sm:p-6 rounded-xl border-2 ${
-                detail.passed ? 'bg-green-100 border-green-300' : 'bg-white border-orange-300'
+              className={`p-4 rounded-xl border-2 ${
+                detail.passed ? 'bg-green-100 border-green-300' : 'bg-orange-50 border-orange-300'
               }`}
             >
-              <p className="text-sm sm:text-lg font-medium">
-                {detail.passed ? '✅ Perfect!' : detail.message}
+              <p className="text-sm sm:text-base font-medium">
+                {detail.passed ? '✅ ' : '💡 '}{detail.message}
               </p>
             </div>
           ))}
@@ -59,15 +59,45 @@ export function FeedbackPanel({
 
         {feedback.type === 'pass' && (
           <>
-            <div className="bg-white rounded-2xl p-4 sm:p-8 mb-6 sm:mb-8 border-2 border-green-200">
-              <h4 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6 flex items-center gap-3">
-                <Star className="w-5 sm:w-6 h-5 sm:h-6 text-yellow-500" />
-                Perfecte prompt voorbeeld:
+            {/* Good vs Bad Example Comparison */}
+            <div className="mb-6 sm:mb-8">
+              <h4 className="text-lg sm:text-xl font-bold mb-4 flex items-center gap-2">
+                📚 Wat heb je geleerd?
               </h4>
-              <div className="bg-gray-50 p-4 sm:p-6 rounded-xl">
-                <pre className="text-xs sm:text-sm whitespace-pre-wrap font-mono leading-relaxed">
-                  {currentLevel.goodExample}
-                </pre>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                {/* Bad Example */}
+                {currentLevel.badExample && (
+                  <div className="bg-red-50 rounded-xl p-4 border-2 border-red-200">
+                    <h5 className="font-bold text-red-700 mb-3 flex items-center gap-2 text-sm">
+                      ❌ Zo niet:
+                    </h5>
+                    <div className="bg-white p-3 rounded-lg border border-red-200">
+                      <pre className="text-xs whitespace-pre-wrap font-mono text-red-800">
+                        {currentLevel.badExample}
+                      </pre>
+                    </div>
+                    <p className="text-xs text-red-600 mt-2">
+                      Te vaag, geen context of structuur
+                    </p>
+                  </div>
+                )}
+
+                {/* Good Example */}
+                <div className="bg-green-50 rounded-xl p-4 border-2 border-green-200">
+                  <h5 className="font-bold text-green-700 mb-3 flex items-center gap-2 text-sm">
+                    <Star className="w-4 h-4 text-yellow-500" />
+                    Zo wel:
+                  </h5>
+                  <div className="bg-white p-3 rounded-lg border border-green-200">
+                    <pre className="text-xs whitespace-pre-wrap font-mono text-green-800 leading-relaxed">
+                      {currentLevel.goodExample}
+                    </pre>
+                  </div>
+                  <p className="text-xs text-green-600 mt-2">
+                    Duidelijke rol, context, taak en format
+                  </p>
+                </div>
               </div>
             </div>
 
