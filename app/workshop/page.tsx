@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import {
   Clock, Users, CheckCircle, Star, ArrowRight,
   Zap, Target, Brain, MessageSquare, Award,
-  ChevronDown, ChevronUp
+  ChevronDown, ChevronUp, Sparkles, Play
 } from 'lucide-react';
 
 export default function WorkshopPage() {
@@ -55,31 +55,35 @@ export default function WorkshopPage() {
     {
       icon: <Target className="w-6 h-6" />,
       title: "Direct toepasbaar",
-      description: "Geen theorie, wel praktijk. Je gaat naar huis met prompts die je morgen kunt gebruiken."
+      description: "Geen theorie, wel praktijk. Je gaat naar huis met prompts die je morgen kunt gebruiken.",
+      color: "bg-emerald-500"
     },
     {
       icon: <Brain className="w-6 h-6" />,
       title: "Begrijp hoe AI denkt",
-      description: "Leer de principes achter goede prompts, zodat je zelf nieuwe kunt maken."
+      description: "Leer de principes achter goede prompts, zodat je zelf nieuwe kunt maken.",
+      color: "bg-violet-500"
     },
     {
       icon: <Zap className="w-6 h-6" />,
       title: "Bespaar uren per week",
-      description: "Automatiseer repetitieve taken zoals CV screening, vacatureteksten en candidate outreach."
+      description: "Automatiseer repetitieve taken zoals CV screening, vacatureteksten en candidate outreach.",
+      color: "bg-amber-500"
     },
     {
       icon: <MessageSquare className="w-6 h-6" />,
       title: "Live feedback",
-      description: "Schrijf prompts en krijg direct feedback van een expert. Geen opgenomen video's."
+      description: "Schrijf prompts en krijg direct feedback van een expert. Geen opgenomen video's.",
+      color: "bg-sky-500"
     },
   ];
 
   const agenda = [
-    { time: "0:00 - 0:20", title: "De basis van prompt engineering", description: "Waarom 90% van de prompts niet werkt en hoe je dat fixt" },
-    { time: "0:20 - 0:50", title: "CV Screening met AI", description: "Van stapels CV's naar shortlist in minuten" },
-    { time: "0:50 - 1:20", title: "Vacatureteksten die converteren", description: "Schrijf teksten die de juiste kandidaten aantrekken" },
-    { time: "1:20 - 1:50", title: "Sourcing & Outreach", description: "Vind kandidaten en schrijf berichten die worden beantwoord" },
-    { time: "1:50 - 2:00", title: "Q&A + Bonus templates", description: "Al je vragen beantwoord + 20 kant-en-klare templates" },
+    { time: "0:00 - 0:20", title: "De basis van prompt engineering", description: "Waarom 90% van de prompts niet werkt en hoe je dat fixt", icon: "🎯" },
+    { time: "0:20 - 0:50", title: "CV Screening met AI", description: "Van stapels CV's naar shortlist in minuten", icon: "📄" },
+    { time: "0:50 - 1:20", title: "Vacatureteksten die converteren", description: "Schrijf teksten die de juiste kandidaten aantrekken", icon: "✍️" },
+    { time: "1:20 - 1:50", title: "Sourcing & Outreach", description: "Vind kandidaten en schrijf berichten die worden beantwoord", icon: "🔍" },
+    { time: "1:50 - 2:00", title: "Q&A + Bonus templates", description: "Al je vragen beantwoord + 20 kant-en-klare templates", icon: "🎁" },
   ];
 
   const faqs = [
@@ -110,24 +114,26 @@ export default function WorkshopPage() {
       quote: "Na de workshop screen ik CV's 3x zo snel. De templates zijn goud waard.",
       name: "Lisa de Vries",
       role: "Senior Recruiter",
-      company: "TechTalent"
+      company: "TechTalent",
+      avatar: "👩‍💼"
     },
     {
       quote: "Eindelijk begrijp ik hoe ik AI effectief kan inzetten. Heel praktisch.",
       name: "Mark Janssen",
       role: "HR Manager",
-      company: "ScaleUp BV"
+      company: "ScaleUp BV",
+      avatar: "👨‍💻"
     },
   ];
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-[#404042] to-[#404042] flex items-center justify-center p-4">
         <div className="bg-white rounded-3xl shadow-2xl p-8 sm:p-12 max-w-lg text-center">
-          <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <CheckCircle className="w-10 h-10 text-green-600" />
+          <div className="w-20 h-20 bg-[#F39816]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <CheckCircle className="w-10 h-10 text-[#F39816]" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-800 mb-4">
+          <h1 className="text-3xl font-bold text-[#404042] mb-4">
             Je bent aangemeld!
           </h1>
           <p className="text-gray-600 mb-6">
@@ -135,7 +141,7 @@ export default function WorkshopPage() {
           </p>
           <a
             href="/"
-            className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-xl font-bold transition"
+            className="inline-block bg-[#F39816] hover:bg-[#D88A14] text-white px-8 py-3 rounded-xl font-bold transition"
           >
             Terug naar Prompt Gym
           </a>
@@ -147,10 +153,16 @@ export default function WorkshopPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-orange-500 to-orange-600 text-white py-16 sm:py-24 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <Clock className="w-4 h-4" />
+      <section className="relative bg-[#404042] text-white py-20 sm:py-28 px-4 overflow-hidden">
+        {/* Background decorations */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#F39816]/20 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#F39816]/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <Sparkles className="w-4 h-4 text-[#F39816]" />
             2 uur live training
           </div>
 
@@ -158,7 +170,7 @@ export default function WorkshopPage() {
             Word een AI-Powered Recruiter in 2 uur
           </h1>
 
-          <p className="text-xl sm:text-2xl text-orange-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Leer prompts schrijven die je uren werk besparen.
             CV screening, vacatures, sourcing - allemaal sneller met AI.
           </p>
@@ -166,12 +178,12 @@ export default function WorkshopPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <a
               href="#aanmelden"
-              className="bg-white text-orange-600 px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition shadow-lg flex items-center gap-2"
+              className="bg-[#F39816] hover:bg-[#D88A14] text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition shadow-lg shadow-[#F39816]/25 flex items-center gap-2"
             >
               Meld je aan
               <ArrowRight className="w-5 h-5" />
             </a>
-            <div className="flex items-center gap-2 text-orange-100">
+            <div className="flex items-center gap-2 text-gray-400">
               <Users className="w-5 h-5" />
               <span>Kleine groepen (max 12 personen)</span>
             </div>
@@ -179,9 +191,9 @@ export default function WorkshopPage() {
 
           <div className="flex items-center justify-center gap-1">
             {[1,2,3,4,5].map(i => (
-              <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+              <Star key={i} className="w-5 h-5 fill-[#F39816] text-[#F39816]" />
             ))}
-            <span className="ml-2 text-orange-100">4.9/5 van 50+ deelnemers</span>
+            <span className="ml-2 text-gray-400">4.9/5 van 50+ deelnemers</span>
           </div>
         </div>
       </section>
@@ -189,45 +201,48 @@ export default function WorkshopPage() {
       {/* Problem Section */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#404042] mb-3">
             Herkenbaar?
           </h2>
+          <p className="text-gray-500 mb-10">Dit horen we vaak van recruiters</p>
           <div className="grid sm:grid-cols-3 gap-6 text-left">
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="text-3xl mb-3">😤</div>
-              <p className="text-gray-700">"Ik gebruik ChatGPT maar de output is vaak niet bruikbaar"</p>
+            <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
+              <div className="text-4xl mb-4">😤</div>
+              <p className="text-[#404042] font-medium">"Ik gebruik ChatGPT maar de output is vaak niet bruikbaar"</p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="text-3xl mb-3">⏰</div>
-              <p className="text-gray-700">"Ik besteed te veel tijd aan repetitieve taken"</p>
+            <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
+              <div className="text-4xl mb-4">⏰</div>
+              <p className="text-[#404042] font-medium">"Ik besteed te veel tijd aan repetitieve taken"</p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="text-3xl mb-3">🤷</div>
-              <p className="text-gray-700">"Ik weet niet hoe ik AI echt kan inzetten voor recruitment"</p>
+            <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
+              <div className="text-4xl mb-4">🤷</div>
+              <p className="text-[#404042] font-medium">"Ik weet niet hoe ik AI echt kan inzetten voor recruitment"</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#404042] mb-3 text-center">
             Na deze workshop...
           </h2>
-          <p className="text-xl text-gray-600 text-center mb-12">
+          <p className="text-xl text-gray-500 text-center mb-12">
             Ga je naar huis met skills én templates die je direct kunt gebruiken
           </p>
 
-          <div className="grid sm:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 gap-6">
             {benefits.map((benefit, idx) => (
-              <div key={idx} className="flex gap-4">
-                <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 flex-shrink-0">
-                  {benefit.icon}
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-800 text-lg mb-1">{benefit.title}</h3>
-                  <p className="text-gray-600">{benefit.description}</p>
+              <div key={idx} className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-md transition">
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 bg-[#F39816] rounded-xl flex items-center justify-center text-white flex-shrink-0">
+                    {benefit.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-[#404042] text-lg mb-1">{benefit.title}</h3>
+                    <p className="text-gray-600">{benefit.description}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -236,24 +251,27 @@ export default function WorkshopPage() {
       </section>
 
       {/* Agenda Section */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-[#404042] text-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-center">
             Wat gaan we doen?
           </h2>
-          <p className="text-xl text-gray-600 text-center mb-12">
+          <p className="text-xl text-gray-400 text-center mb-12">
             2 uur vol praktijk, geen saaie slides
           </p>
 
           <div className="space-y-4">
             {agenda.map((item, idx) => (
-              <div key={idx} className="bg-white rounded-xl p-6 shadow-sm flex flex-col sm:flex-row gap-4">
-                <div className="text-orange-600 font-mono font-bold text-sm sm:w-32 flex-shrink-0">
-                  {item.time}
+              <div key={idx} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 flex flex-col sm:flex-row gap-4 hover:bg-white/10 transition">
+                <div className="flex items-center gap-3 sm:w-40 flex-shrink-0">
+                  <span className="text-2xl">{item.icon}</span>
+                  <span className="text-[#F39816] font-mono font-bold text-sm">
+                    {item.time}
+                  </span>
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-800 mb-1">{item.title}</h3>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
+                  <h3 className="font-bold text-white mb-1">{item.title}</h3>
+                  <p className="text-gray-400 text-sm">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -262,24 +280,29 @@ export default function WorkshopPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-12 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#404042] mb-12 text-center">
             Wat anderen zeggen
           </h2>
 
           <div className="grid sm:grid-cols-2 gap-8">
             {testimonials.map((t, idx) => (
-              <div key={idx} className="bg-orange-50 rounded-2xl p-6">
+              <div key={idx} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
                 <div className="flex gap-1 mb-4">
                   {[1,2,3,4,5].map(i => (
-                    <Star key={i} className="w-4 h-4 fill-orange-500 text-orange-500" />
+                    <Star key={i} className="w-4 h-4 fill-[#F39816] text-[#F39816]" />
                   ))}
                 </div>
-                <p className="text-gray-800 mb-4 italic">"{t.quote}"</p>
-                <div>
-                  <p className="font-bold text-gray-800">{t.name}</p>
-                  <p className="text-sm text-gray-600">{t.role} bij {t.company}</p>
+                <p className="text-[#404042] mb-6 text-lg">"{t.quote}"</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-[#F39816]/10 rounded-full flex items-center justify-center text-2xl">
+                    {t.avatar}
+                  </div>
+                  <div>
+                    <p className="font-bold text-[#404042]">{t.name}</p>
+                    <p className="text-sm text-gray-500">{t.role} bij {t.company}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -288,25 +311,25 @@ export default function WorkshopPage() {
       </section>
 
       {/* Signup Form */}
-      <section id="aanmelden" className="py-16 px-4 bg-gradient-to-b from-orange-500 to-orange-600">
+      <section id="aanmelden" className="py-16 px-4 bg-[#404042]">
         <div className="max-w-xl mx-auto">
           <div className="bg-white rounded-3xl shadow-2xl p-6 sm:p-10">
             <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-bold mb-4">
+              <div className="inline-flex items-center gap-2 bg-[#F39816]/10 text-[#F39816] px-4 py-2 rounded-full text-sm font-bold mb-4">
                 <Award className="w-4 h-4" />
                 Inclusief 20 templates
               </div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-2">
+              <h2 className="text-3xl font-bold text-[#404042] mb-2">
                 Meld je aan
               </h2>
-              <p className="text-gray-600">
+              <p className="text-gray-500">
                 We nemen contact op voor datum en betaling
               </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-[#404042] mb-1">
                   Naam *
                 </label>
                 <input
@@ -314,13 +337,13 @@ export default function WorkshopPage() {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#F39816] focus:outline-none transition"
                   placeholder="Je volledige naam"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-[#404042] mb-1">
                   Email *
                 </label>
                 <input
@@ -328,33 +351,33 @@ export default function WorkshopPage() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#F39816] focus:outline-none transition"
                   placeholder="naam@bedrijf.nl"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-[#404042] mb-1">
                   Bedrijf
                 </label>
                 <input
                   type="text"
                   value={formData.company}
                   onChange={(e) => setFormData({...formData, company: e.target.value})}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#F39816] focus:outline-none transition"
                   placeholder="Waar werk je?"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-[#404042] mb-1">
                   Telefoonnummer
                 </label>
                 <input
                   type="tel"
                   value={formData.phone}
                   onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#F39816] focus:outline-none transition"
                   placeholder="06-12345678"
                 />
               </div>
@@ -362,7 +385,7 @@ export default function WorkshopPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 rounded-xl font-bold text-lg hover:scale-105 transition disabled:opacity-50 flex items-center justify-center gap-2"
+                className="w-full bg-[#F39816] hover:bg-[#D88A14] text-white py-4 rounded-xl font-bold text-lg hover:scale-[1.02] transition disabled:opacity-50 flex items-center justify-center gap-2 shadow-lg"
               >
                 {isSubmitting ? (
                   "Even geduld..."
@@ -375,7 +398,7 @@ export default function WorkshopPage() {
               </button>
             </form>
 
-            <p className="text-center text-sm text-gray-500 mt-4">
+            <p className="text-center text-sm text-gray-400 mt-4">
               We spammen niet. Je gegevens zijn veilig.
             </p>
           </div>
@@ -383,28 +406,28 @@ export default function WorkshopPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-white">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+          <h2 className="text-3xl font-bold text-[#404042] mb-8 text-center">
             Veelgestelde vragen
           </h2>
 
           <div className="space-y-3">
             {faqs.map((faq, idx) => (
-              <div key={idx} className="border border-gray-200 rounded-xl overflow-hidden">
+              <div key={idx} className="border border-gray-200 rounded-xl overflow-hidden bg-gray-50">
                 <button
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                  className="w-full flex items-center justify-between p-4 text-left font-medium text-gray-800 hover:bg-gray-50"
+                  className="w-full flex items-center justify-between p-4 text-left font-medium text-[#404042] hover:bg-gray-100 transition"
                 >
                   {faq.q}
                   {openFaq === idx ? (
-                    <ChevronUp className="w-5 h-5 text-gray-400" />
+                    <ChevronUp className="w-5 h-5 text-[#F39816]" />
                   ) : (
                     <ChevronDown className="w-5 h-5 text-gray-400" />
                   )}
                 </button>
                 {openFaq === idx && (
-                  <div className="px-4 pb-4 text-gray-600">
+                  <div className="px-4 pb-4 text-gray-600 bg-white">
                     {faq.a}
                   </div>
                 )}
@@ -415,7 +438,7 @@ export default function WorkshopPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 px-4 bg-gray-900 text-white">
+      <section className="py-16 px-4 bg-[#404042] text-white">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Klaar om AI te leren gebruiken?
@@ -425,7 +448,7 @@ export default function WorkshopPage() {
           </p>
           <a
             href="#aanmelden"
-            className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition"
+            className="inline-flex items-center gap-2 bg-[#F39816] hover:bg-[#D88A14] text-white px-8 py-4 rounded-xl font-bold text-lg transition shadow-lg"
           >
             Meld je nu aan
             <ArrowRight className="w-5 h-5" />
@@ -434,9 +457,9 @@ export default function WorkshopPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 bg-gray-50 text-center text-gray-600 text-sm">
-        <p>© {new Date().getFullYear()} Recruitin. Alle rechten voorbehouden.</p>
-        <a href="/" className="text-orange-600 hover:underline mt-2 inline-block">
+      <footer className="py-8 px-4 bg-[#404042] border-t border-white/10 text-center">
+        <p className="text-gray-400 text-sm">© {new Date().getFullYear()} Recruitin. Alle rechten voorbehouden.</p>
+        <a href="/" className="text-[#F39816] hover:text-[#D88A14] mt-2 inline-block text-sm">
           Terug naar Prompt Gym
         </a>
       </footer>
