@@ -11,6 +11,8 @@ const initialState: GameState = {
   unlockedTemplates: [],
   perfectStreak: 0,
   gameComplete: false,
+  hasUnlockedPremium: false,
+  userEmail: undefined,
 };
 
 export function useGameState() {
@@ -78,6 +80,14 @@ export function useGameState() {
     setState(prev => ({ ...prev, gameComplete: complete }));
   }, []);
 
+  const unlockPremium = useCallback((email: string) => {
+    setState(prev => ({
+      ...prev,
+      hasUnlockedPremium: true,
+      userEmail: email,
+    }));
+  }, []);
+
   return {
     ...state,
     isLoaded,
@@ -87,5 +97,6 @@ export function useGameState() {
     updatePerfectStreak,
     resetGame,
     setGameComplete,
+    unlockPremium,
   };
 }

@@ -6,6 +6,7 @@ import { Sparkles, RefreshCw, Target, Book, Lightbulb, Key } from 'lucide-react'
 // Components
 import { WelcomeScreen } from './WelcomeScreen';
 import { GameCompleteScreen } from './GameCompleteScreen';
+import { UpgradeScreen } from './UpgradeScreen';
 import { ProgressBar, LevelIndicators } from './ProgressBar';
 import { FeedbackPanel } from './FeedbackPanel';
 import { Confetti } from './Confetti';
@@ -18,6 +19,7 @@ import { Feedback } from '../types';
 
 const PromptGym = () => {
   const [showWelcome, setShowWelcome] = useState(true);
+  const [showUpgrade, setShowUpgrade] = useState(false);
   const [userPrompt, setUserPrompt] = useState('');
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [attempts, setAttempts] = useState(0);
@@ -31,6 +33,7 @@ const PromptGym = () => {
     unlockedTemplates,
     perfectStreak,
     gameComplete,
+    hasUnlockedPremium,
     isLoaded,
     updateScore,
     nextLevel,
@@ -38,6 +41,7 @@ const PromptGym = () => {
     updatePerfectStreak,
     resetGame,
     setGameComplete,
+    unlockPremium,
   } = useGameState();
 
   const currentLevelData = levels[currentLevel];
@@ -75,6 +79,12 @@ const PromptGym = () => {
   }, [userPrompt, currentLevel, attempts, updateScore, unlockTemplate, updatePerfectStreak]);
 
   const handleNextLevel = useCallback(() => {
+    // After level 1 (index 0), show upgrade screen if not unlocked
+    if (currentLevel === 0 && !hasUnlockedPremium) {
+      setShowUpgrade(true);
+      return;
+    }
+
     if (currentLevel < levels.length - 1) {
       nextLevel(levels.length);
       setUserPrompt('');
@@ -84,7 +94,17 @@ const PromptGym = () => {
     } else {
       setGameComplete(true);
     }
-  }, [currentLevel, nextLevel, setGameComplete]);
+  }, [currentLevel, hasUnlockedPremium, nextLevel, setGameComplete]);
+
+  const handleContinueFree = useCallback((email: string) => {
+    unlockPremium(email);
+    setShowUpgrade(false);
+    nextLevel(levels.length);
+    setUserPrompt('');
+    setFeedback(null);
+    setAttempts(0);
+    setShowHint(false);
+  }, [unlockPremium, nextLevel]);
 
   const handleStart = useCallback(() => {
     resetGame();
@@ -126,6 +146,16 @@ const PromptGym = () => {
         onStart={handleStart}
         hasSavedProgress={hasSavedProgress}
         onContinue={hasSavedProgress ? handleContinue : undefined}
+      />
+    );
+  }
+
+  // Upgrade screen (after level 1)
+  if (showUpgrade) {
+    return (
+      <UpgradeScreen
+        score={score}
+        onContinueFree={handleContinueFree}
       />
     );
   }
