@@ -56,4 +56,6 @@ export interface GameState {
   unlockedTemplates: Templates[];
   perfectStreak: number;
   gameComplete: boolean;
+  hasUnlockedPremium: boolean;
+  userEmail?: string;
 }
