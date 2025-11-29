@@ -24,11 +24,14 @@ export interface Level {
   icon: string;
   color: string;
   description: string;
+  learningGoal: string;
+  keyPrinciple: string;
   scenario: string;
   challenge: string;
   hints: string[];
   rubric: Rubric;
   goodExample: string;
+  badExample?: string;
   templates: Templates;
 }
 

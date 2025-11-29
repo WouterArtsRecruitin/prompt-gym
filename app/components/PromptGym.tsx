@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useCallback } from 'react';
-import { Sparkles, RefreshCw, Target, Book } from 'lucide-react';
+import { Sparkles, RefreshCw, Target, Book, Lightbulb, Key } from 'lucide-react';
 
 // Components
 import { WelcomeScreen } from './WelcomeScreen';
@@ -165,6 +165,24 @@ const PromptGym = () => {
               </div>
             </div>
 
+            {/* Learning Goal & Key Principle */}
+            <div className="grid sm:grid-cols-2 gap-4 mb-6 sm:mb-8">
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <Lightbulb className="w-4 h-4 text-blue-600" />
+                  <h4 className="font-bold text-blue-800 text-sm">Wat leer je?</h4>
+                </div>
+                <p className="text-blue-700 text-sm">{currentLevelData.learningGoal}</p>
+              </div>
+              <div className="bg-purple-50 border border-purple-200 rounded-xl p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <Key className="w-4 h-4 text-purple-600" />
+                  <h4 className="font-bold text-purple-800 text-sm">Kernprincipe</h4>
+                </div>
+                <p className="text-purple-700 text-sm font-medium">{currentLevelData.keyPrinciple}</p>
+              </div>
+            </div>
+
             {/* Challenge Section */}
             <div className="bg-gray-50 border border-gray-200 rounded-2xl p-4 sm:p-8 mb-6 sm:mb-8">
               <div className="flex items-center gap-3 mb-4 sm:mb-6">
@@ -175,11 +193,23 @@ const PromptGym = () => {
               </div>
               <div className="bg-white rounded-xl p-4 sm:p-6 mb-4 sm:mb-6">
                 <h4 className="font-bold text-gray-700 mb-2 sm:mb-3 text-sm sm:text-base">📋 Scenario:</h4>
-                <p className="text-gray-700 text-sm sm:text-lg leading-relaxed">{currentLevelData.scenario}</p>
+                <p className="text-gray-700 text-sm sm:text-base leading-relaxed whitespace-pre-line">{currentLevelData.scenario}</p>
               </div>
-              <div className="bg-gradient-to-r from-orange-100 to-gray-100 rounded-xl p-4 sm:p-6">
-                <h4 className="font-bold text-orange-600 mb-2 sm:mb-3 text-sm sm:text-base">🎯 Challenge:</h4>
-                <p className="text-purple-800 text-sm sm:text-lg font-medium leading-relaxed">{currentLevelData.challenge}</p>
+              <div className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-xl p-4 sm:p-6">
+                <h4 className="font-bold text-orange-600 mb-2 sm:mb-3 text-sm sm:text-base">🎯 Jouw taak:</h4>
+                <div className="text-gray-800 text-sm sm:text-base leading-relaxed whitespace-pre-line">
+                  {currentLevelData.challenge.split('\n').map((line, i) => {
+                    // Bold text between ** **
+                    const parts = line.split(/\*\*(.*?)\*\*/g);
+                    return (
+                      <p key={i} className={line.startsWith('1.') || line.startsWith('2.') || line.startsWith('3.') || line.startsWith('4.') ? 'ml-2 my-1' : 'my-1'}>
+                        {parts.map((part, j) =>
+                          j % 2 === 1 ? <strong key={j} className="text-orange-700">{part}</strong> : part
+                        )}
+                      </p>
+                    );
+                  })}
+                </div>
               </div>
             </div>
 
