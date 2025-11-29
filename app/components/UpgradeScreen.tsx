@@ -85,9 +85,7 @@ export function UpgradeScreen({ score, onContinueFree }: UpgradeScreenProps) {
           </div>
 
           <a
-            href="https://www.recruitin.nl/workshop"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/workshop"
             className="block w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 px-6 rounded-xl font-bold text-lg text-center hover:scale-105 transition shadow-lg"
           >
             Bekijk Workshop Details →
