@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { X, Download, Mail, CheckCircle, Sparkles } from 'lucide-react';
+import { trackExitIntent, trackEmailSignup } from '../lib/analytics';
 
 interface ExitIntentPopupProps {
   onEmailCapture?: (email: string) => void;
@@ -22,6 +23,8 @@ export function ExitIntentPopup({ onEmailCapture }: ExitIntentPopupProps) {
       if (!dismissed && !captured) {
         setIsVisible(true);
         setHasShown(true);
+        // Track exit intent popup shown
+        trackExitIntent(false);
       }
     }
   }, [hasShown]);
@@ -57,13 +60,29 @@ export function ExitIntentPopup({ onEmailCapture }: ExitIntentPopupProps) {
 
     if (!email.trim()) return;
 
-    // Store email
+    // Store email locally
     localStorage.setItem('prompt-gym-email-captured', email);
 
-    // Send to backend (Pipedrive or your email service)
+    // Send to Pipedrive
+    const PIPEDRIVE_FORM_URL = process.env.NEXT_PUBLIC_PIPEDRIVE_FORM_URL;
+
     try {
-      // You can integrate with your email service here
-      console.log('Exit intent email captured:', email);
+      if (PIPEDRIVE_FORM_URL) {
+        const formBody = new FormData();
+        formBody.append('email', email);
+        formBody.append('source', 'Exit Intent Popup - Cheatsheet');
+        formBody.append('lead_type', 'cheatsheet_download');
+
+        await fetch(PIPEDRIVE_FORM_URL, {
+          method: 'POST',
+          body: formBody,
+          mode: 'no-cors',
+        });
+      }
+
+      // Track conversion in GA4
+      trackExitIntent(true);
+      trackEmailSignup('exit_intent_cheatsheet');
     } catch (error) {
       console.error('Failed to send email:', error);
     }
