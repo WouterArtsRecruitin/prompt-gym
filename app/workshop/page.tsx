@@ -6,6 +6,7 @@ import { CountdownTimer } from '../components/CountdownTimer';
 import { StatsBar, ClientLogos } from '../components/SocialProofBar';
 import { StickyFooterCTA } from '../components/StickyFooterCTA';
 import { ExitIntentPopup } from '../components/ExitIntentPopup';
+import { trackWorkshopSignup } from '../lib/analytics';
 
 export default function WorkshopPage() {
   const [formData, setFormData] = useState({
@@ -70,26 +71,31 @@ export default function WorkshopPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Replace with your actual Pipedrive form URL
-    const PIPEDRIVE_FORM_URL = 'https://webforms.pipedrive.com/f/YOUR_FORM_ID';
+    // Pipedrive form URL from environment variable
+    const PIPEDRIVE_FORM_URL = process.env.NEXT_PUBLIC_PIPEDRIVE_FORM_URL;
 
     try {
-      const formBody = new FormData();
-      formBody.append('name', `${formData.firstName} ${formData.lastName}`);
-      formBody.append('email', formData.email);
-      formBody.append('company', formData.company);
-      formBody.append('phone', formData.phone);
-      formBody.append('experience', formData.experience);
-      formBody.append('source', 'Prompt Gym Workshop');
-      formBody.append('spots_at_signup', String(spotsLeft));
+      if (PIPEDRIVE_FORM_URL) {
+        const formBody = new FormData();
+        formBody.append('name', `${formData.firstName} ${formData.lastName}`);
+        formBody.append('email', formData.email);
+        formBody.append('company', formData.company);
+        formBody.append('phone', formData.phone);
+        formBody.append('experience', formData.experience);
+        formBody.append('source', 'Prompt Gym Workshop');
+        formBody.append('spots_at_signup', String(spotsLeft));
 
-      await fetch(PIPEDRIVE_FORM_URL, {
-        method: 'POST',
-        body: formBody,
-        mode: 'no-cors',
-      });
+        await fetch(PIPEDRIVE_FORM_URL, {
+          method: 'POST',
+          body: formBody,
+          mode: 'no-cors',
+        });
+      }
 
-      // Store conversion
+      // Track conversion in GA4
+      trackWorkshopSignup();
+
+      // Store conversion locally
       localStorage.setItem('workshop-signup', JSON.stringify({
         email: formData.email,
         date: new Date().toISOString(),
@@ -207,7 +213,7 @@ export default function WorkshopPage() {
             </ul>
           </div>
           <a
-            href="/"
+            href="/game"
             className="inline-block bg-[#f5a623] hover:bg-[#e09620] text-[#0f0f12] px-8 py-3 rounded-xl font-bold transition"
           >
             Speel ondertussen de Prompt Gym

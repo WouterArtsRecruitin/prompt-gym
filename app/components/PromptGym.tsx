@@ -19,6 +19,7 @@ import { levels } from '../data/levels';
 import { useGameState } from '../hooks/useGameState';
 import { checkPrompt, calculatePoints, PASS_THRESHOLD, HINT_THRESHOLD } from '../utils/promptChecker';
 import { Feedback } from '../types';
+import { trackGameStart, trackLevelComplete, trackGameComplete, trackTemplateUnlock, trackEmailSignup } from '../lib/analytics';
 
 const PromptGym = () => {
   const [showWelcome, setShowWelcome] = useState(true);
@@ -61,6 +62,10 @@ const PromptGym = () => {
       unlockTemplate(level.templates);
       updatePerfectStreak(attempts === 0);
 
+      // Track level completion
+      trackLevelComplete(currentLevel + 1, pointsEarned);
+      trackTemplateUnlock(`${level.templates.basis.title}, ${level.templates.uitgebreid.title}`);
+
       setFeedback({
         type: 'pass',
         percentage: result.percentage,
@@ -94,11 +99,16 @@ const PromptGym = () => {
       setAttempts(0);
       setShowHint(false);
     } else {
+      // Track game completion
+      trackGameComplete(score);
       setGameComplete(true);
     }
-  }, [currentLevel, hasUnlockedPremium, nextLevel, setGameComplete]);
+  }, [currentLevel, hasUnlockedPremium, nextLevel, setGameComplete, score]);
 
   const handleContinueFree = useCallback((email: string) => {
+    // Track email signup for game unlock
+    trackEmailSignup('game_unlock');
+
     unlockPremium(email);
     setShowUpgrade(false);
     nextLevel(levels.length);
@@ -109,6 +119,9 @@ const PromptGym = () => {
   }, [unlockPremium, nextLevel]);
 
   const handleStart = useCallback(() => {
+    // Track game start
+    trackGameStart();
+
     resetGame();
     setShowWelcome(false);
     setUserPrompt('');

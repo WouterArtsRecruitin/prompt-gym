@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Trophy, Rocket, Mail, Clock, Users, CheckCircle, ArrowRight } from 'lucide-react';
+import { trackEmailSignup } from '../lib/analytics';
 
 interface UpgradeScreenProps {
   score: number;
@@ -13,11 +14,33 @@ export function UpgradeScreen({ score, onContinueFree }: UpgradeScreenProps) {
   const [showEmailForm, setShowEmailForm] = useState(false);
   const [emailSubmitted, setEmailSubmitted] = useState(false);
 
-  const handleEmailSubmit = (e: React.FormEvent) => {
+  const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email.trim()) {
-      // In production: send to your email service
-      console.log('Email captured:', email);
+      // Send to Pipedrive
+      const PIPEDRIVE_FORM_URL = process.env.NEXT_PUBLIC_PIPEDRIVE_FORM_URL;
+
+      try {
+        if (PIPEDRIVE_FORM_URL) {
+          const formBody = new FormData();
+          formBody.append('email', email);
+          formBody.append('source', 'Game Unlock - Level 2');
+          formBody.append('lead_type', 'game_player');
+          formBody.append('score', String(score));
+
+          await fetch(PIPEDRIVE_FORM_URL, {
+            method: 'POST',
+            body: formBody,
+            mode: 'no-cors',
+          });
+        }
+
+        // Track in GA4
+        trackEmailSignup('game_unlock');
+      } catch (error) {
+        console.error('Failed to send to Pipedrive:', error);
+      }
+
       setEmailSubmitted(true);
       setTimeout(() => {
         onContinueFree(email);
