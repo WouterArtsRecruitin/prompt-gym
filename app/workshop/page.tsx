@@ -213,7 +213,7 @@ export default function WorkshopPage() {
             </ul>
           </div>
           <a
-            href="/"
+            href="/game"
             className="inline-block bg-[#f5a623] hover:bg-[#e09620] text-[#0f0f12] px-8 py-3 rounded-xl font-bold transition"
           >
             Speel ondertussen de Prompt Gym

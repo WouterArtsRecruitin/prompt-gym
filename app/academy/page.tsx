@@ -204,7 +204,7 @@ export default function AcademyPage() {
             <span className="text-[#f5a623] font-semibold text-sm">AI Academy</span>
           </div>
           <div className="flex items-center gap-4">
-            <a href="/" className="text-sm text-[#9a9a9f] hover:text-white transition hidden sm:inline">
+            <a href="/game" className="text-sm text-[#9a9a9f] hover:text-white transition hidden sm:inline">
               Prompt Gym
             </a>
             <a href="/workshop" className="text-sm text-[#9a9a9f] hover:text-white transition hidden sm:inline">
@@ -606,7 +606,7 @@ export default function AcademyPage() {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-[#6a6a70] text-sm">© 2025 Recruitin B.V. — AI Academy</p>
             <div className="flex gap-6">
-              <a href="/" className="text-[#6a6a70] text-sm hover:text-[#9a9a9f] transition">Prompt Gym</a>
+              <a href="/game" className="text-[#6a6a70] text-sm hover:text-[#9a9a9f] transition">Prompt Gym</a>
               <a href="/workshop" className="text-[#6a6a70] text-sm hover:text-[#9a9a9f] transition">Workshop</a>
               <a href="mailto:info@recruitin.nl" className="text-[#6a6a70] text-sm hover:text-[#9a9a9f] transition">Contact</a>
             </div>
