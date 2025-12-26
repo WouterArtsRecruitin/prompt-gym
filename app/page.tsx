@@ -467,8 +467,9 @@ export default function HomePage() {
           <div className="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-[#6a6a70]">© 2025 Recruitin B.V.</p>
             <div className="flex gap-6 text-sm text-[#6a6a70]">
-              <a href="#" className="hover:text-white transition">Privacy</a>
-              <a href="#" className="hover:text-white transition">Voorwaarden</a>
+              <a href="/privacy" className="hover:text-white transition">Privacy</a>
+              <a href="/voorwaarden" className="hover:text-white transition">Voorwaarden</a>
+              <a href="/disclaimer" className="hover:text-white transition">Disclaimer</a>
             </div>
           </div>
         </div>

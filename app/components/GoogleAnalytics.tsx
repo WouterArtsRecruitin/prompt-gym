@@ -2,7 +2,7 @@
 
 import Script from 'next/script';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect, Suspense } from 'react';
+import { useEffect, Suspense, useState } from 'react';
 import { GA_MEASUREMENT_ID, pageview } from '../lib/analytics';
 
 function GoogleAnalyticsInner() {
@@ -20,7 +20,25 @@ function GoogleAnalyticsInner() {
 }
 
 export function GoogleAnalytics() {
-  if (!GA_MEASUREMENT_ID) {
+  const [hasConsent, setHasConsent] = useState(false);
+
+  useEffect(() => {
+    // Check for cookie consent
+    const consentStr = localStorage.getItem('cookie-consent');
+    if (consentStr) {
+      try {
+        const consent = JSON.parse(consentStr);
+        if (consent.analytics === true) {
+          setHasConsent(true);
+        }
+      } catch {
+        // Invalid consent data, don't load analytics
+      }
+    }
+  }, []);
+
+  // Don't render if no measurement ID or no consent
+  if (!GA_MEASUREMENT_ID || !hasConsent) {
     return null;
   }
 
@@ -40,6 +58,7 @@ export function GoogleAnalytics() {
             gtag('js', new Date());
             gtag('config', '${GA_MEASUREMENT_ID}', {
               page_path: window.location.pathname,
+              anonymize_ip: true,
             });
           `,
         }}

@@ -594,6 +594,11 @@ export default function WorkshopPage() {
                     <Shield className="w-3.5 h-3.5" />
                     100% geld-terug-garantie • Beveiligde betaling
                   </p>
+                  <p className="text-xs text-[#6a6a70] text-center mt-2">
+                    Door je aan te melden ga je akkoord met onze{' '}
+                    <a href="/voorwaarden" className="text-[#f5a623] hover:underline">voorwaarden</a>{' '}
+                    en <a href="/privacy" className="text-[#f5a623] hover:underline">privacy statement</a>.
+                  </p>
                 </form>
               </div>
             </div>
@@ -607,8 +612,9 @@ export default function WorkshopPage() {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-[#6a6a70] text-sm">© 2025 Recruitin B.V. — Prompt Gym Workshop</p>
             <div className="flex gap-6">
-              <a href="#" className="text-[#6a6a70] text-sm hover:text-[#9a9a9f] transition">Privacy</a>
-              <a href="#" className="text-[#6a6a70] text-sm hover:text-[#9a9a9f] transition">Voorwaarden</a>
+              <a href="/privacy" className="text-[#6a6a70] text-sm hover:text-[#9a9a9f] transition">Privacy</a>
+              <a href="/voorwaarden" className="text-[#6a6a70] text-sm hover:text-[#9a9a9f] transition">Voorwaarden</a>
+              <a href="/disclaimer" className="text-[#6a6a70] text-sm hover:text-[#9a9a9f] transition">Disclaimer</a>
               <a href="mailto:info@recruitin.nl" className="text-[#6a6a70] text-sm hover:text-[#9a9a9f] transition">Contact</a>
             </div>
           </div>

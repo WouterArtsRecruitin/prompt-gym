@@ -293,6 +293,20 @@ const PromptGym = () => {
               </div>
             </div>
 
+            {/* Data Warning Banner */}
+            <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 mb-6">
+              <div className="flex items-start gap-3">
+                <span className="text-red-400 text-xl">⚠️</span>
+                <div>
+                  <p className="text-red-300 font-medium text-sm">Gebruik GEEN echte persoonsgegevens</p>
+                  <p className="text-red-200/70 text-xs mt-1">
+                    Gebruik altijd fictieve namen en geanonimiseerde data bij het oefenen met AI-tools.
+                    <a href="/disclaimer" className="text-red-300 underline ml-1 hover:text-red-200">Lees onze disclaimer →</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* Input Section */}
             <div className="bg-[#24242d] border border-white/[0.06] rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8">
               <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Schrijf hier je prompt:</h3>
