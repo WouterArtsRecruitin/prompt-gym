@@ -541,6 +541,11 @@ export default function AcademyPage() {
                 <Shield className="w-3.5 h-3.5" />
                 14 dagen geld-terug-garantie
               </p>
+              <p className="text-center text-xs text-[#6a6a70] mt-2">
+                Door je aan te melden ga je akkoord met onze{' '}
+                <a href="/voorwaarden" className="text-[#f5a623] hover:underline">voorwaarden</a>{' '}
+                en <a href="/privacy" className="text-[#f5a623] hover:underline">privacy statement</a>.
+              </p>
             </div>
           </div>
 
@@ -605,10 +610,12 @@ export default function AcademyPage() {
         <div className="max-w-[1140px] mx-auto px-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-[#6a6a70] text-sm">© 2025 Recruitin B.V. — AI Academy</p>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap gap-4 sm:gap-6">
               <a href="/game" className="text-[#6a6a70] text-sm hover:text-[#9a9a9f] transition">Prompt Gym</a>
               <a href="/workshop" className="text-[#6a6a70] text-sm hover:text-[#9a9a9f] transition">Workshop</a>
-              <a href="mailto:info@recruitin.nl" className="text-[#6a6a70] text-sm hover:text-[#9a9a9f] transition">Contact</a>
+              <a href="/privacy" className="text-[#6a6a70] text-sm hover:text-[#9a9a9f] transition">Privacy</a>
+              <a href="/voorwaarden" className="text-[#6a6a70] text-sm hover:text-[#9a9a9f] transition">Voorwaarden</a>
+              <a href="/disclaimer" className="text-[#6a6a70] text-sm hover:text-[#9a9a9f] transition">Disclaimer</a>
             </div>
           </div>
         </div>
