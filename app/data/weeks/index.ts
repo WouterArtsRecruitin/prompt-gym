@@ -1,10 +1,16 @@
 import { WeekContent } from '@/app/types/pro';
 import { week01 } from './week-01';
+import { week02 } from './week-02';
+import { week03 } from './week-03';
+import { week04 } from './week-04';
 
-// Week content - will be expanded as content is developed
+// Week content - Module 1 complete (week 1-4)
 export const weekContent: Record<number, WeekContent> = {
   1: week01,
-  // Week 2-36 will be added as content is developed
+  2: week02,
+  3: week03,
+  4: week04,
+  // Week 5-36 will be added as content is developed
 };
 
 export function getWeekContent(weekNumber: number): WeekContent | null {
