@@ -20,9 +20,10 @@
 │  ├── Level 1: Basis prompting (15 min)                 │
 │  └── 3 oefeningen + 3 templates                        │
 ├─────────────────────────────────────────────────────────┤
-│  EMAIL REQUIRED                                         │
+│  €19 EENMALIG                                           │
 │  ├── Level 2-3: Extra oefeningen                       │
-│  └── 6 bonus templates                                  │
+│  ├── 6 bonus templates                                  │
+│  └── Eerste betaling = commitment                       │
 ├─────────────────────────────────────────────────────────┤
 │  PRO: €75/maand                                         │
 │  ├── Week 1-4:  Module 1 - Fundamentals                │
@@ -30,6 +31,21 @@
 │  └── Week 9-12: Module 3 - Sourcing & Outreach         │
 └─────────────────────────────────────────────────────────┘
 ```
+
+### Prijsmodel
+
+| Niveau | Prijs | Wat krijg je |
+|--------|-------|--------------|
+| Level 1 | **Gratis** | 3 oefeningen, 3 templates |
+| Level 2-3 | **€19 eenmalig** | 6 extra oefeningen, 6 templates |
+| Pro | **€75/maand** | 12 weken training, 24 templates, certificaat |
+
+### Revenue Model
+
+| Bron | Prijs | Bij 100 users | Bij 500 users |
+|------|-------|---------------|---------------|
+| Level 2-3 | €19 | €1.900 | €9.500 |
+| Pro (20% conversie) | €75/maand | €1.500/maand | €7.500/maand |
 
 ---
 
@@ -238,7 +254,7 @@ Lever in: 5 prompts + 5 outputs + reflectie
 2. Simpele Vacature Prompt
 3. LinkedIn Bericht Basis
 
-### Email Required (Level 2-3)
+### €19 Eenmalig (Level 2-3)
 4. 7-Bouwblokken Template
 5. CV Screening Prompt
 6. Interview Vragen Generator
@@ -246,7 +262,7 @@ Lever in: 5 prompts + 5 outputs + reflectie
 8. Boolean Search Basis
 9. Outreach Bericht Template
 
-### Pro (€75/maand)
+### Pro €75/maand
 10. Vacature Generator v2
 11. Tone of Voice Adapter
 12. A/B Test Generator

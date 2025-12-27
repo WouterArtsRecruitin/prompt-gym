@@ -112,11 +112,19 @@ Dit is haalbaar.
 BEZOEKERS (website)
     ↓ 10% conversie
 GRATIS LEVEL 1
-    ↓ 30% geeft email
-EMAIL LIJST
-    ↓ 10% converteert
-BETALENDE KLANT (€75/maand)
+    ↓ 30% betaalt €19
+LEVEL 2-3 (€19 eenmalig)
+    ↓ 20% converteert naar Pro
+PRO KLANT (€75/maand)
 ```
+
+### 2.1.1 Prijsmodel
+
+| Niveau | Prijs | Wat krijg je |
+|--------|-------|--------------|
+| Level 1 | Gratis | 3 oefeningen, 3 templates |
+| Level 2-3 | €19 eenmalig | 6 oefeningen, 6 templates |
+| Pro | €75/maand | 12 weken training, 24 templates |
 
 ### 2.2 Berekening: Hoeveel bezoekers nodig?
 
