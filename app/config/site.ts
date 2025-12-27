@@ -16,7 +16,11 @@
 export type SiteVersion = 'A' | 'B';
 
 // Change this to switch between versions
-export const SITE_VERSION: SiteVersion = 'B';
+// Using function to prevent TypeScript from narrowing the type
+function getSiteVersion(): SiteVersion {
+  return 'B';
+}
+export const SITE_VERSION: SiteVersion = getSiteVersion();
 
 // Version A: Full Pro Config
 const configA = {

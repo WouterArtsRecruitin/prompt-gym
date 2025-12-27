@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { createClient } from '@/app/lib/supabase/server';
 import { stripe, STRIPE_PRICES } from '@/app/lib/stripe';
 import { SITE_VERSION } from '@/app/config/site';
+import { SubscriptionStatus } from '@/app/types/database';
 
 export async function POST(request: Request) {
   try {
@@ -21,10 +22,10 @@ export async function POST(request: Request) {
     // VERSION B: Mock payment - no real Stripe
     if (SITE_VERSION === 'B') {
       // Directly activate subscription (mock payment success)
-      await supabase
+      await (supabase as any)
         .from('profiles')
         .update({
-          subscription_status: 'active',
+          subscription_status: 'active' as SubscriptionStatus,
           subscription_start: new Date().toISOString(),
         })
         .eq('id', user.id);
@@ -36,11 +37,11 @@ export async function POST(request: Request) {
     }
 
     // VERSION A: Real Stripe checkout
-    const { data: profile } = await supabase
+    const { data: profile } = await (supabase as any)
       .from('profiles')
       .select('stripe_customer_id, email')
       .eq('id', user.id)
-      .single();
+      .single() as { data: { stripe_customer_id: string | null; email: string | null } | null };
 
     let customerId = profile?.stripe_customer_id;
 
@@ -53,7 +54,7 @@ export async function POST(request: Request) {
       });
       customerId = customer.id;
 
-      await supabase
+      await (supabase as any)
         .from('profiles')
         .update({ stripe_customer_id: customerId })
         .eq('id', user.id);

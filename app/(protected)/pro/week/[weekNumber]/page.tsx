@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { jsPDF } from 'jspdf';
 import {
   Sparkles,
   ChevronLeft,
@@ -15,6 +16,8 @@ import {
   Lock,
   CheckCircle,
   FileText,
+  Download,
+  FileDown,
 } from 'lucide-react';
 import { createClient } from '@/app/lib/supabase/client';
 import { getWeekContent, getModuleByWeek, weekContent } from '@/app/data/weeks';
@@ -61,6 +64,137 @@ export default function WeekPage() {
     navigator.clipboard.writeText(text);
     setCopiedTemplate(templateId);
     setTimeout(() => setCopiedTemplate(null), 2000);
+  };
+
+  // Download as TXT
+  const downloadAsTxt = (title: string, content: string) => {
+    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${title.replace(/[^a-zA-Z0-9]/g, '-')}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  // Download all templates as single TXT
+  const downloadAllTemplates = () => {
+    if (!week) return;
+
+    const content = week.templates.map((t, i) =>
+      `${'='.repeat(60)}\n${i + 1}. ${t.title}\n${'='.repeat(60)}\n${t.description}\n\n${t.prompt}\n\n`
+    ).join('\n');
+
+    const header = `Prompt Gym - Week ${weekNumber}: ${week.title}\nDownload datum: ${new Date().toLocaleDateString('nl-NL')}\n\n`;
+
+    downloadAsTxt(`Week-${weekNumber}-Templates`, header + content);
+  };
+
+  // Download as PDF
+  const downloadAsPdf = (title: string, content: string) => {
+    const doc = new jsPDF();
+    const margin = 20;
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const maxLineWidth = pageWidth - margin * 2;
+    let yPosition = margin;
+
+    // Title
+    doc.setFontSize(16);
+    doc.setFont('helvetica', 'bold');
+    doc.text(title, margin, yPosition);
+    yPosition += 10;
+
+    // Subtitle
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(100);
+    doc.text(`Prompt Gym - Week ${weekNumber}`, margin, yPosition);
+    doc.text(new Date().toLocaleDateString('nl-NL'), pageWidth - margin - 25, yPosition);
+    yPosition += 15;
+
+    // Content
+    doc.setFontSize(11);
+    doc.setTextColor(0);
+    const lines = doc.splitTextToSize(content, maxLineWidth);
+
+    for (const line of lines) {
+      if (yPosition > doc.internal.pageSize.getHeight() - margin) {
+        doc.addPage();
+        yPosition = margin;
+      }
+      doc.text(line, margin, yPosition);
+      yPosition += 6;
+    }
+
+    doc.save(`${title.replace(/[^a-zA-Z0-9]/g, '-')}.pdf`);
+  };
+
+  // Download all templates as PDF
+  const downloadAllPdf = () => {
+    if (!week) return;
+
+    const doc = new jsPDF();
+    const margin = 20;
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const maxLineWidth = pageWidth - margin * 2;
+    let yPosition = margin;
+
+    // Header
+    doc.setFontSize(20);
+    doc.setFont('helvetica', 'bold');
+    doc.text(`Week ${weekNumber}: ${week.title}`, margin, yPosition);
+    yPosition += 10;
+
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(100);
+    doc.text(`Prompt Gym - ${week.templates.length} templates`, margin, yPosition);
+    doc.text(new Date().toLocaleDateString('nl-NL'), pageWidth - margin - 25, yPosition);
+    yPosition += 20;
+
+    doc.setTextColor(0);
+
+    week.templates.forEach((template, index) => {
+      // Check if we need a new page
+      if (yPosition > doc.internal.pageSize.getHeight() - 60) {
+        doc.addPage();
+        yPosition = margin;
+      }
+
+      // Template title
+      doc.setFontSize(14);
+      doc.setFont('helvetica', 'bold');
+      doc.text(`${index + 1}. ${template.title}`, margin, yPosition);
+      yPosition += 7;
+
+      // Description
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'italic');
+      doc.setTextColor(100);
+      doc.text(template.description, margin, yPosition);
+      yPosition += 10;
+
+      // Prompt content
+      doc.setFontSize(10);
+      doc.setFont('courier', 'normal');
+      doc.setTextColor(0);
+      const lines = doc.splitTextToSize(template.prompt, maxLineWidth);
+
+      for (const line of lines) {
+        if (yPosition > doc.internal.pageSize.getHeight() - margin) {
+          doc.addPage();
+          yPosition = margin;
+        }
+        doc.text(line, margin, yPosition);
+        yPosition += 5;
+      }
+
+      yPosition += 15; // Space between templates
+    });
+
+    doc.save(`Week-${weekNumber}-Templates.pdf`);
   };
 
   if (loading) {
@@ -321,9 +455,31 @@ export default function WeekPage() {
 
         {/* Templates */}
         <div className="mb-8">
-          <div className="flex items-center gap-2 mb-4">
-            <FileText className="w-5 h-5 text-[#f5a623]" />
-            <h2 className="font-bold">Templates</h2>
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <FileText className="w-5 h-5 text-[#f5a623]" />
+              <h2 className="font-bold">Templates</h2>
+            </div>
+            {week.templates.length > 1 && (
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={downloadAllTemplates}
+                  className="flex items-center gap-2 px-3 py-1.5 bg-[#1c1c23] border border-white/[0.06] rounded-lg text-sm font-medium text-[#9a9a9f] hover:text-[#f0ede8] hover:border-[#f5a623]/50 transition"
+                  title="Download alle templates als .txt"
+                >
+                  <FileDown className="w-4 h-4" />
+                  <span className="hidden sm:inline">.txt</span>
+                </button>
+                <button
+                  onClick={downloadAllPdf}
+                  className="flex items-center gap-2 px-3 py-1.5 bg-[#f5a623] text-[#0f0f12] rounded-lg text-sm font-medium hover:bg-[#e09620] transition"
+                  title="Download alle templates als PDF"
+                >
+                  <FileDown className="w-4 h-4" />
+                  <span className="hidden sm:inline">PDF</span>
+                </button>
+              </div>
+            )}
           </div>
 
           <div className="grid gap-4">
@@ -334,26 +490,47 @@ export default function WeekPage() {
                     <h3 className="font-bold mb-1">{template.title}</h3>
                     <p className="text-[#6a6a70] text-sm">{template.description}</p>
                   </div>
-                  <button
-                    onClick={() => copyToClipboard(template.prompt, template.id)}
-                    className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition ${
-                      copiedTemplate === template.id
-                        ? 'bg-green-500 text-white'
-                        : 'bg-[#f5a623] text-[#0f0f12] hover:bg-[#e09620]'
-                    }`}
-                  >
-                    {copiedTemplate === template.id ? (
-                      <>
-                        <Check className="w-4 h-4" />
-                        Gekopieerd
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-4 h-4" />
-                        Copy
-                      </>
-                    )}
-                  </button>
+                  <div className="flex items-center gap-2">
+                    {/* Download TXT */}
+                    <button
+                      onClick={() => downloadAsTxt(template.title, template.prompt)}
+                      className="flex items-center gap-1.5 px-2.5 py-1.5 bg-[#2a2a35] rounded-lg text-sm font-medium text-[#9a9a9f] hover:text-[#f0ede8] hover:bg-[#35353f] transition"
+                      title="Download als .txt"
+                    >
+                      <Download className="w-4 h-4" />
+                      <span className="hidden lg:inline">.txt</span>
+                    </button>
+                    {/* Download PDF */}
+                    <button
+                      onClick={() => downloadAsPdf(template.title, template.prompt)}
+                      className="flex items-center gap-1.5 px-2.5 py-1.5 bg-[#2a2a35] rounded-lg text-sm font-medium text-[#9a9a9f] hover:text-[#f0ede8] hover:bg-[#35353f] transition"
+                      title="Download als PDF"
+                    >
+                      <FileDown className="w-4 h-4" />
+                      <span className="hidden lg:inline">PDF</span>
+                    </button>
+                    {/* Copy */}
+                    <button
+                      onClick={() => copyToClipboard(template.prompt, template.id)}
+                      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition ${
+                        copiedTemplate === template.id
+                          ? 'bg-green-500 text-white'
+                          : 'bg-[#f5a623] text-[#0f0f12] hover:bg-[#e09620]'
+                      }`}
+                    >
+                      {copiedTemplate === template.id ? (
+                        <>
+                          <Check className="w-4 h-4" />
+                          Gekopieerd
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="w-4 h-4" />
+                          Copy
+                        </>
+                      )}
+                    </button>
+                  </div>
                 </div>
                 <pre className="bg-[#0f0f12] border border-white/[0.06] rounded-lg p-4 overflow-x-auto text-sm text-[#9a9a9f] whitespace-pre-wrap">
                   {template.prompt}

@@ -15,11 +15,11 @@ export async function POST(request: Request) {
     }
 
     // Get Stripe customer ID
-    const { data: profile } = await supabase
+    const { data: profile } = await (supabase as any)
       .from('profiles')
       .select('stripe_customer_id')
       .eq('id', user.id)
-      .single();
+      .single() as { data: { stripe_customer_id: string | null } | null };
 
     if (!profile?.stripe_customer_id) {
       return NextResponse.json(
