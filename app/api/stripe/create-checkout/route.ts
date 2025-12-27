@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@/app/lib/supabase/server';
 import { stripe, STRIPE_PRICES } from '@/app/lib/stripe';
+import { SITE_VERSION } from '@/app/config/site';
 
 export async function POST(request: Request) {
   try {
@@ -15,8 +16,26 @@ export async function POST(request: Request) {
     }
 
     const { priceType = 'monthly' } = await request.json();
+    const origin = request.headers.get('origin') || '';
 
-    // Get or create Stripe customer
+    // VERSION B: Mock payment - no real Stripe
+    if (SITE_VERSION === 'B') {
+      // Directly activate subscription (mock payment success)
+      await supabase
+        .from('profiles')
+        .update({
+          subscription_status: 'active',
+          subscription_start: new Date().toISOString(),
+        })
+        .eq('id', user.id);
+
+      // Return success URL directly
+      return NextResponse.json({
+        url: `${origin}/dashboard?success=true&mock=true`,
+      });
+    }
+
+    // VERSION A: Real Stripe checkout
     const { data: profile } = await supabase
       .from('profiles')
       .select('stripe_customer_id, email')
@@ -34,14 +53,12 @@ export async function POST(request: Request) {
       });
       customerId = customer.id;
 
-      // Save customer ID to profile
       await supabase
         .from('profiles')
         .update({ stripe_customer_id: customerId })
         .eq('id', user.id);
     }
 
-    // Create checkout session
     const priceId = priceType === 'monthly'
       ? STRIPE_PRICES.PRO_MONTHLY
       : STRIPE_PRICES.LEVEL_UNLOCK;
@@ -55,8 +72,8 @@ export async function POST(request: Request) {
         },
       ],
       mode: priceType === 'monthly' ? 'subscription' : 'payment',
-      success_url: `${request.headers.get('origin')}/dashboard?success=true`,
-      cancel_url: `${request.headers.get('origin')}/dashboard?canceled=true`,
+      success_url: `${origin}/dashboard?success=true`,
+      cancel_url: `${origin}/dashboard?canceled=true`,
       metadata: {
         supabase_user_id: user.id,
         price_type: priceType,

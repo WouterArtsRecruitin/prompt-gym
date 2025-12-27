@@ -54,16 +54,17 @@ const configA = {
   },
 };
 
-// Version B: Simple Test Config
+// Version B: Simple Test Config (NO REAL PAYMENTS)
 const configB = {
   version: 'B' as const,
   name: 'Simple Test',
 
-  // Pricing
+  // Pricing (mock - no real charges)
   pricing: {
-    levelUnlock: 1900, // €19 for Level 2-3
+    levelUnlock: 0,    // Free for testing
     proMonthly: 0,     // No subscription
     currency: 'eur',
+    isMock: true,      // Flag for mock payments
   },
 
   // Features
@@ -72,6 +73,7 @@ const configB = {
     hasModuleTeasers: false,
     totalWeeks: 3, // Just the 3 levels
     showComingSoon: false,
+    mockPayments: true, // No real Stripe
   },
 
   // Content
@@ -84,8 +86,8 @@ const configB = {
   // Copy
   copy: {
     upgradeTitle: 'Unlock Level 2 & 3',
-    upgradeDescription: 'Krijg toegang tot alle levels en templates voor €19',
-    ctaButton: 'Unlock voor €19',
+    upgradeDescription: 'Test modus - geen echte betaling',
+    ctaButton: 'TEST: Unlock gratis',
     dashboardTitle: 'Prompt Gym',
   },
 };
