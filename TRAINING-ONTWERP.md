@@ -49,6 +49,86 @@
 
 ---
 
+## Upgrade Trigger: "Proef de Pro"
+
+### Na Level 3: Gratis Week 1 Pro
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                                                         │
+│  🎉 Level 3 Afgerond!                                   │
+│                                                         │
+│  Je beheerst nu de basis van prompt engineering.        │
+│  Maar dit is nog maar het begin...                      │
+│                                                         │
+│  ─────────────────────────────────────────────────────  │
+│                                                         │
+│  🎁 PROEF DE PRO                                        │
+│                                                         │
+│  Probeer Week 1 van Pro GRATIS.                         │
+│  Geen creditcard nodig.                                 │
+│                                                         │
+│  Je krijgt:                                             │
+│  ✓ Vacatureteksten die 2x beter converteren            │
+│  ✓ 2 praktijkoefeningen                                │
+│  ✓ 3 pro templates                                      │
+│                                                         │
+│  ┌─────────────────────────────────────────────────┐   │
+│  │         [Start Week 1 Gratis]                   │   │
+│  └─────────────────────────────────────────────────┘   │
+│                                                         │
+│  Daarna €75/maand. Opzeggen wanneer je wilt.           │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+### Waarom Dit Werkt
+
+| Factor | Effect |
+|--------|--------|
+| **Geen risico** | Gebruiker hoeft niet te betalen om te proberen |
+| **Ervaren > vertellen** | Ze voelen de kwaliteit zelf |
+| **Commitment** | Na Week 1 is stoppen moeilijker dan doorgaan |
+| **Bewezen model** | Netflix, Spotify, alle SaaS doet dit |
+
+### Conversie Flow
+
+```
+Level 3 afgerond
+    ↓
+"Proef de Pro" scherm
+    ↓
+Week 1 Pro (gratis, 7 dagen)
+    ↓
+Dag 5: Email reminder "Nog 2 dagen gratis"
+    ↓
+Dag 7: "Wil je doorgaan? €75/maand"
+    ↓
+[Ja] → Stripe checkout → Pro member
+[Nee] → Terug naar Level 3 (maar ze hebben Pro geproefd)
+```
+
+### Email Sequence Na Gratis Week
+
+| Dag | Email | Onderwerp |
+|-----|-------|-----------|
+| 1 | Welkom | "Je Pro week is begonnen 🚀" |
+| 3 | Tip | "Haal je alles uit Week 1?" |
+| 5 | Reminder | "Nog 2 dagen gratis Pro" |
+| 7 | Keuze | "Wil je doorgaan met Pro?" |
+| 8 | Last chance | "Je Pro toegang verloopt vandaag" |
+| 10 | Win-back | "We missen je - 50% korting eerste maand" |
+
+### Metrics Om Te Tracken
+
+| Metric | Target |
+|--------|--------|
+| Level 3 → Start gratis week | 60% |
+| Gratis week → Betaald Pro | 30% |
+| Totaal Level 3 → Pro | **18%** |
+
+---
+
 ## Module 1: Prompt Fundamentals (Week 1-4)
 
 ### Leerdoel
