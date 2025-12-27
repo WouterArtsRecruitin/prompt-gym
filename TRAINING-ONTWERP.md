@@ -32,32 +32,27 @@
 └─────────────────────────────────────────────────────────┘
 ```
 
-### Prijsmodel
+### Prijsmodel (Definitief)
 
 | Niveau | Prijs | Wat krijg je |
 |--------|-------|--------------|
 | Level 1 | **Gratis** | 3 oefeningen, 3 templates |
 | Level 2-3 | **€19 eenmalig** | 6 extra oefeningen, 6 templates |
-| Pro Flex | **€75/maand** | Maandelijks opzegbaar |
-| Pro Commitment | **€49/maand** | 3 maanden vast (€147 totaal) |
+| Pro | **€75/maand** | 12 weken training, 24 templates |
 
-### Flexibiliteit = Premium
+### Één Prijs, Simpel
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│  KIES JE PRO PLAN                                       │
-│                                                         │
-│  ┌─────────────────────┐  ┌─────────────────────────┐  │
-│  │  FLEX               │  │  COMMITMENT ⭐ POPULAIR │  │
-│  │  €75/maand          │  │  €49/maand              │  │
-│  │                     │  │                         │  │
-│  │  ✓ Opzeggen wanneer │  │  ✓ 3 maanden vast      │  │
-│  │    je wilt          │  │  ✓ Bespaar 35%         │  │
-│  │                     │  │  ✓ €147 totaal         │  │
-│  │  [Kies Flex]        │  │  [Kies Commitment]     │  │
-│  └─────────────────────┘  └─────────────────────────┘  │
-└─────────────────────────────────────────────────────────┘
+PRO = €75/maand
+
+Geen kortingen. Geen tiers.
+Opzeggen wanneer je wilt.
 ```
+
+**Waarom geen commitment korting:**
+- Simpeler te communiceren
+- Geen marge weggeven
+- Focus op waarde, niet op lock-in
 
 ### Revenue Model
 
@@ -88,9 +83,9 @@
 │  Geen creditcard nodig.                                 │
 │                                                         │
 │  Je krijgt:                                             │
-│  ✓ Vacatureteksten die 2x beter converteren            │
-│  ✓ 2 praktijkoefeningen                                │
-│  ✓ 3 pro templates                                      │
+│  ✓ Week 1 theorie (vacatureteksten)                    │
+│  ✓ 1 oefening                                           │
+│  ✓ 1 template (preview, geen download)                 │
 │                                                         │
 │  ┌─────────────────────────────────────────────────┐   │
 │  │         [Start Week 1 Gratis]                   │   │
@@ -100,6 +95,17 @@
 │                                                         │
 └─────────────────────────────────────────────────────────┘
 ```
+
+### Anti-Misbruik Maatregelen
+
+| Maatregel | Hoe |
+|-----------|-----|
+| **Beperkte content** | Alleen Week 1, niet alle 12 weken |
+| **Geen template downloads** | Preview only, download na betaling |
+| **1 oefening** | Niet alle oefeningen van Week 1 |
+| **Watermark** | Templates tonen "PROEF DE PRO" watermark |
+| **Email required** | Moet email achterlaten voor trial |
+| **1x per email** | Zelfde email kan niet opnieuw trial starten |
 
 ### Waarom Dit Werkt
 
