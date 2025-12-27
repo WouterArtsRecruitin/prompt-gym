@@ -154,6 +154,75 @@ Dag 7: "Wil je doorgaan? €75/maand"
 
 ---
 
+## Retentie: Verlenging Na 3 Maanden
+
+### Teaser Strategie (Week 10-12)
+
+```
+WEEK 10: Sneak peek Module 4-6
+    ↓
+WEEK 11: "Dit komt eraan" preview
+    ↓
+WEEK 12: "Blijf en krijg toegang tot..."
+```
+
+### In-App Teasers
+
+| Week | Teaser | Waar |
+|------|--------|------|
+| 10 | "Binnenkort: CV Screening in 30 sec" | Dashboard banner |
+| 11 | "Module 4 preview: Bekijk 1 les gratis" | Na oefening |
+| 11 | "Jouw resultaten tot nu toe: X prompts, Y templates" | Email |
+| 12 | "Je Pro loopt af - wat je gaat missen" | Pop-up |
+
+### Locked Preview Content
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  🔒 BINNENKORT IN MODULE 4-6                            │
+│                                                         │
+│  ├── CV's screenen in 30 seconden                      │
+│  ├── Interview vragen die écht werken                  │
+│  ├── Automatiseer je hele workflow                     │
+│  └── + 12 nieuwe templates                              │
+│                                                         │
+│  ┌─────────────────────────────────────────────────┐   │
+│  │  [Bekijk preview van Module 4]                  │   │
+│  └─────────────────────────────────────────────────┘   │
+│                                                         │
+│  Beschikbaar als je Pro verlengt na week 12.           │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+### Email Sequence Retentie (Week 10-12)
+
+| Dag | Email | Onderwerp |
+|-----|-------|-----------|
+| Week 10 | Progress | "Je hebt X geleerd - en dit komt eraan" |
+| Week 11 | Preview | "Sneak peek: Module 4 - CV Screening" |
+| Week 11+3 | Social proof | "Lisa bespaart nu 5 uur/week met Module 4" |
+| Week 12 | Reminder | "Nog 7 dagen Pro - wil je doorgaan?" |
+| Week 12+3 | Last chance | "Morgen stopt je toegang tot Pro" |
+| Week 12+5 | FOMO | "Je mist Module 4 - nog 48 uur om te verlengen" |
+
+### Retentie Incentives (optioneel)
+
+| Incentive | Voorwaarde | Effect |
+|-----------|------------|--------|
+| Geen | Standaard | Baseline |
+| "Verleng nu, krijg 1 week gratis" | Verleng voor deadline | +10% retentie |
+| "Module 4 preview unlock" | Verleng | Zien wat ze missen |
+
+### Metrics Retentie
+
+| Metric | Target |
+|--------|--------|
+| Week 12 → Verlenging | 60% |
+| Churn na 3 maanden | <40% |
+
+---
+
 ## Module 1: Prompt Fundamentals (Week 1-4)
 
 ### Leerdoel
