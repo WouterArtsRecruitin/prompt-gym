@@ -1,4 +1,17 @@
 export type SubscriptionStatus = 'free' | 'trial' | 'active' | 'cancelled' | 'expired';
+export type ChurnRisk = 'low' | 'medium' | 'high';
+
+// Week attempt tracking (stored as JSONB)
+export interface WeekAttempt {
+  attempts: number;
+  first_completed: string | null;
+  best_score: number;
+  last_attempt: string;
+}
+
+export interface WeekAttempts {
+  [weekNumber: string]: WeekAttempt;
+}
 
 export interface Database {
   public: {
@@ -47,6 +60,16 @@ export interface Database {
           unlocked_templates: string[];
           total_score: number;
           last_activity: string;
+          // Extended tracking
+          week_attempts: WeekAttempts;
+          streak_days: number;
+          longest_streak: number;
+          total_time_minutes: number;
+          sessions_count: number;
+          // Retention signals
+          churn_risk: ChurnRisk;
+          last_reminder_sent: string | null;
+          reminder_count: number;
         };
         Insert: {
           id?: string;
@@ -56,6 +79,14 @@ export interface Database {
           unlocked_templates?: string[];
           total_score?: number;
           last_activity?: string;
+          week_attempts?: WeekAttempts;
+          streak_days?: number;
+          longest_streak?: number;
+          total_time_minutes?: number;
+          sessions_count?: number;
+          churn_risk?: ChurnRisk;
+          last_reminder_sent?: string | null;
+          reminder_count?: number;
         };
         Update: {
           id?: string;
@@ -65,6 +96,14 @@ export interface Database {
           unlocked_templates?: string[];
           total_score?: number;
           last_activity?: string;
+          week_attempts?: WeekAttempts;
+          streak_days?: number;
+          longest_streak?: number;
+          total_time_minutes?: number;
+          sessions_count?: number;
+          churn_risk?: ChurnRisk;
+          last_reminder_sent?: string | null;
+          reminder_count?: number;
         };
       };
       trial_log: {
@@ -87,6 +126,29 @@ export interface Database {
           trial_started?: string;
         };
       };
+      activity_log: {
+        Row: {
+          id: string;
+          user_id: string;
+          event_type: string;
+          event_data: Record<string, unknown>;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          event_type: string;
+          event_data?: Record<string, unknown>;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          event_type?: string;
+          event_data?: Record<string, unknown>;
+          created_at?: string;
+        };
+      };
     };
   };
 }
@@ -95,3 +157,4 @@ export interface Database {
 export type Profile = Database['public']['Tables']['profiles']['Row'];
 export type UserProgress = Database['public']['Tables']['user_progress']['Row'];
 export type TrialLog = Database['public']['Tables']['trial_log']['Row'];
+export type ActivityLog = Database['public']['Tables']['activity_log']['Row'];
