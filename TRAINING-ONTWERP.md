@@ -38,7 +38,26 @@
 |--------|-------|--------------|
 | Level 1 | **Gratis** | 3 oefeningen, 3 templates |
 | Level 2-3 | **€19 eenmalig** | 6 extra oefeningen, 6 templates |
-| Pro | **€75/maand** | 12 weken training, 24 templates, certificaat |
+| Pro Flex | **€75/maand** | Maandelijks opzegbaar |
+| Pro Commitment | **€49/maand** | 3 maanden vast (€147 totaal) |
+
+### Flexibiliteit = Premium
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  KIES JE PRO PLAN                                       │
+│                                                         │
+│  ┌─────────────────────┐  ┌─────────────────────────┐  │
+│  │  FLEX               │  │  COMMITMENT ⭐ POPULAIR │  │
+│  │  €75/maand          │  │  €49/maand              │  │
+│  │                     │  │                         │  │
+│  │  ✓ Opzeggen wanneer │  │  ✓ 3 maanden vast      │  │
+│  │    je wilt          │  │  ✓ Bespaar 35%         │  │
+│  │                     │  │  ✓ €147 totaal         │  │
+│  │  [Kies Flex]        │  │  [Kies Commitment]     │  │
+│  └─────────────────────┘  └─────────────────────────┘  │
+└─────────────────────────────────────────────────────────┘
+```
 
 ### Revenue Model
 
