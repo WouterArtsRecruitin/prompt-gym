@@ -1,21 +1,14 @@
 # Netlify Configuration for Prompt Gym Version B (Test)
 [build]
-  command = "npm run build"
+  command = "npm run build:netlify"
   publish = ".next"
 
 [build.environment]
   NODE_VERSION = "20"
-  # Version B is set in app/config/site.ts
 
-# Next.js specific settings
+# Next.js plugin handles all routing
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-# Redirect all routes to Next.js
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/___netlify-handler"
-  status = 200
 
 # Environment variables needed (set in Netlify dashboard):
 # - NEXT_PUBLIC_SUPABASE_URL
