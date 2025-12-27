@@ -1,9 +1,17 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@/app/lib/supabase/server';
-import { stripe } from '@/app/lib/stripe';
+import { SITE_VERSION } from '@/app/config/site';
 
 export async function POST(request: Request) {
   try {
+    // Version B doesn't have Stripe portal
+    if (SITE_VERSION === 'B') {
+      return NextResponse.json(
+        { error: 'Billing portal niet beschikbaar in test modus' },
+        { status: 400 }
+      );
+    }
+
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
 
@@ -11,6 +19,16 @@ export async function POST(request: Request) {
       return NextResponse.json(
         { error: 'Je moet ingelogd zijn' },
         { status: 401 }
+      );
+    }
+
+    // Dynamic import Stripe only for Version A
+    const { stripe } = await import('@/app/lib/stripe');
+
+    if (!stripe) {
+      return NextResponse.json(
+        { error: 'Stripe is niet geconfigureerd' },
+        { status: 500 }
       );
     }
 

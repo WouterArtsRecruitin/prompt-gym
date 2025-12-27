@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@/app/lib/supabase/server';
-import { stripe, STRIPE_PRICES } from '@/app/lib/stripe';
 import { SITE_VERSION } from '@/app/config/site';
 import { SubscriptionStatus } from '@/app/types/database';
 
@@ -36,7 +35,16 @@ export async function POST(request: Request) {
       });
     }
 
-    // VERSION A: Real Stripe checkout
+    // VERSION A: Real Stripe checkout - dynamically import to avoid build errors
+    const { stripe, STRIPE_PRICES } = await import('@/app/lib/stripe');
+
+    if (!stripe) {
+      return NextResponse.json(
+        { error: 'Stripe is niet geconfigureerd' },
+        { status: 500 }
+      );
+    }
+
     const { data: profile } = await (supabase as any)
       .from('profiles')
       .select('stripe_customer_id, email')

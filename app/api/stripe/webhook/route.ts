@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
-import { stripe } from '@/app/lib/stripe';
 import { createClient } from '@supabase/supabase-js';
-import Stripe from 'stripe';
+import type Stripe from 'stripe';
+import { SITE_VERSION } from '@/app/config/site';
 
 // Lazy initialization of Supabase admin client
 function getSupabaseAdmin() {
@@ -12,6 +12,21 @@ function getSupabaseAdmin() {
 }
 
 export async function POST(request: Request) {
+  // Version B doesn't use Stripe webhooks
+  if (SITE_VERSION === 'B') {
+    return NextResponse.json({ received: true, mock: true });
+  }
+
+  // Dynamic import Stripe
+  const { stripe } = await import('@/app/lib/stripe');
+
+  if (!stripe) {
+    return NextResponse.json(
+      { error: 'Stripe is niet geconfigureerd' },
+      { status: 500 }
+    );
+  }
+
   const supabaseAdmin = getSupabaseAdmin();
   const body = await request.text();
   const signature = request.headers.get('stripe-signature')!;
