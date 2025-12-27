@@ -5,10 +5,10 @@
 | Metric | Getal |
 |--------|-------|
 | Doel omzet | €10.000/maand |
-| Prijs | €75/maand |
-| Benodigde abonnees | **134 actief** |
+| Prijs | €49/maand (startprijs) |
+| Benodigde abonnees | **204 actief** |
 | Geschatte churn | 10%/maand |
-| Nieuwe klanten nodig | 20-30/maand |
+| Nieuwe klanten nodig | 25-35/maand |
 
 ---
 
@@ -84,7 +84,7 @@ Bij 20 assets voor Module 1-3: **~30 uur finetuning**
 | HR met recruitment taken | ~20.000 | Ja, secundair |
 | **Totaal primair** | **~23.000** | |
 
-**134 abonnees = 0.6% van de markt**
+**204 abonnees = 0.9% van de markt**
 
 Dit is haalbaar.
 
@@ -97,10 +97,12 @@ Dit is haalbaar.
 | UPD | €795-€1.295 | 1-2 dagen |
 | Udemy | €20-€89 | Self-paced |
 
-**Jouw positie: €75/maand**
+**Jouw positie: €49/maand (startprijs)**
+- Competitief met Klikwork (€29)
 - Goedkoper dan AIHR (€94)
 - Duurder dan Udemy (kwaliteit signaal)
 - Flexibeler dan 1-dag workshops
+- Gefaseerde prijsstijging: €49 → €69 → €75
 
 ---
 
@@ -124,7 +126,7 @@ PRO KLANT (€75/maand)
 |--------|-------|--------------|
 | Level 1 | Gratis | 3 oefeningen, 3 templates |
 | Level 2-3 | €19 eenmalig | 6 oefeningen, 6 templates |
-| Pro | €75/maand | 12 weken training, 24 templates |
+| Pro | €49/maand | 12 weken training, 24 templates |
 
 ### 2.2 Berekening: Hoeveel bezoekers nodig?
 
@@ -163,8 +165,8 @@ Om 25 nieuwe klanten/maand te krijgen:
 |---------|------------|
 | €1.000 budget ÷ 25 klanten = €40/klant | €0 ÷ 25 klanten = €0/klant |
 
-Bij €75/maand en 3 maanden retentie = €225 lifetime value
-**€40 acquisitie kost = 18% van LTV** (gezond)
+Bij €49/maand en 3 maanden retentie = €147 lifetime value
+**€40 acquisitie kost = 27% van LTV** (acceptabel voor groei)
 
 ---
 
@@ -182,13 +184,13 @@ EMAIL (gratis)
 ├── 6 bonus templates
 └── Doel: Vertrouwen opbouwen
 
-BETAALD: €75/maand
+BETAALD: €49/maand (startprijs)
 ├── Module 1: Fundamentals (week 1-4)
 ├── Module 2: Content & Vacatures (week 5-8)
 ├── Module 3: Sourcing & Outreach (week 9-12)
 └── Doel: Echte skill development
 
-DAARNA: €75/maand ongoing
+DAARNA: €49/maand ongoing (later €69 → €75)
 ├── Module 4: Screening & Selectie
 ├── Module 5: Interviewing
 ├── Module 6: Automation & Workflows
@@ -257,18 +259,19 @@ DAARNA: €75/maand ongoing
 
 ### 4.3 Pad naar €10.000/maand
 
-| Maand | Nieuwe | Churn | Actief | Omzet | Kosten | Winst |
-|-------|--------|-------|--------|-------|--------|-------|
-| 1 | 15 | 0 | 15 | €1.125 | €800 | €325 |
-| 2 | 18 | 2 | 31 | €2.325 | €900 | €1.425 |
-| 3 | 22 | 3 | 50 | €3.750 | €1.000 | €2.750 |
-| 4 | 25 | 5 | 70 | €5.250 | €1.200 | €4.050 |
-| 5 | 28 | 7 | 91 | €6.825 | €1.400 | €5.425 |
-| 6 | 30 | 9 | 112 | €8.400 | €1.600 | €6.800 |
-| 7 | 32 | 11 | 133 | €9.975 | €1.800 | €8.175 |
-| **8** | **35** | **13** | **155** | **€11.625** | **€1.900** | **€9.725** |
+| Maand | Nieuwe | Churn | Actief | Omzet (€49) | Kosten | Winst |
+|-------|--------|-------|--------|-------------|--------|-------|
+| 1 | 20 | 0 | 20 | €980 | €700 | €280 |
+| 2 | 25 | 2 | 43 | €2.107 | €800 | €1.307 |
+| 3 | 30 | 4 | 69 | €3.381 | €900 | €2.481 |
+| 4 | 35 | 7 | 97 | €4.753 | €1.000 | €3.753 |
+| 5 | 40 | 10 | 127 | €6.223 | €1.200 | €5.023 |
+| 6 | 45 | 13 | 159 | €7.791 | €1.400 | €6.391 |
+| **7** | **50** | **16** | **193** | **€9.457** | **€1.600** | **€7.857** |
+| **8** | **55** | **19** | **229** | **€11.221** | **€1.800** | **€9.421** |
 
-**Na 8 maanden: €10.000+ omzet, ~€8.000+ winst**
+**Na 7-8 maanden: €10.000+ omzet, ~€8.000+ winst**
+**Prijsstijging naar €69 bij 200+ abonnees versnelt dit**
 
 ### 4.4 Jaar 2+ Scenario
 
@@ -317,14 +320,16 @@ Als je 155 actieve abonnees hebt en churn/groei stabiliseert:
 
 ### 5.3 Fase 2: Groei (Maand 3-8)
 
-**Doel:** Naar 134+ actieve abonnees
+**Doel:** Naar 204+ actieve abonnees
 
 | Actie | Details |
 |-------|---------|
-| Prijs naar €75/maand | Na early bird periode |
+| Blijf bij €49/maand | Focus op volume en social proof |
 | Start LinkedIn Ads | €500-1.000/maand |
 | Wekelijks posten | Content marketing |
 | Partnerships | Events, andere trainers |
+| Prijs naar €69/maand | Bij 100+ actieve abonnees |
+| Prijs naar €75/maand | Bij 200+ actieve abonnees |
 
 ---
 
@@ -379,11 +384,11 @@ Als je 155 actieve abonnees hebt en churn/groei stabiliseert:
 
 | Maand | Focus | Doel |
 |-------|-------|------|
-| 4 | Module 4 + marketing opschalen | 70 actief |
-| 5 | Module 5 + partnerships | 90 actief |
-| 6 | Module 6 + LinkedIn Ads | 110 actief |
-| 7 | Nieuwe content (advanced) | 130 actief |
-| 8 | Optimaliseren, churn verlagen | **134+ actief** |
+| 4 | Module 4 + marketing opschalen | 97 actief |
+| 5 | Module 5 + partnerships + prijs naar €69 | 127 actief |
+| 6 | Module 6 + LinkedIn Ads | 159 actief |
+| 7 | Nieuwe content (advanced) | 193 actief |
+| 8 | Optimaliseren, prijs naar €75 | **200+ actief** |
 
 ---
 
@@ -392,14 +397,15 @@ Als je 155 actieve abonnees hebt en churn/groei stabiliseert:
 | Vraag | Helemaal nieuw | Met finetuning bestaande content |
 |-------|----------------|----------------------------------|
 | Doel | €10.000/maand | €10.000/maand |
-| Prijs | €75/maand | €75/maand |
-| Klanten nodig | 134 actief | 134 actief |
-| **Tijd tot doel** | **8 maanden** | **7-8 maanden** |
+| Prijs | €49 → €69 → €75/maand | €49 → €69 → €75/maand |
+| Klanten nodig | 204 actief (bij €49) | 204 actief (bij €49) |
+| **Tijd tot doel** | **7-8 maanden** | **7 maanden** |
 | **Investering** | **~126 uur** | **~100 uur** |
 | Break-even | Maand 3-4 | Maand 3 |
 | Winst maand 8 | ~€8.000-10.000 | ~€8.500-10.500 |
 
 **Voordeel:** ~20% minder werk + je kent de content al
+**Extra voordeel:** Lagere startprijs = snellere groei + meer testimonials
 
 ---
 
@@ -411,6 +417,23 @@ Als je 155 actieve abonnees hebt en churn/groei stabiliseert:
 2. **€195.000+ aan assets** → Alleen verpakken
 3. **7 Bouwblokken** → Bewezen framework
 4. **Production-ready agents** → Upsell mogelijkheden
+
+### Unique Selling Proposition (USP)
+
+```
+"Gemaakt door een recruiter die nog steeds dagelijks
+dezelfde uitdagingen ervaart als jij."
+
+✓ 25+ jaar ervaring in recruitment EN technologie
+✓ Nog steeds operationeel actief - geen ivoren toren
+✓ Directe connectie met jouw dagelijkse problemen
+✓ Praktische oplossingen die echt werken
+```
+
+**Concurrentievoordeel vs Klikwork/anderen:**
+- Marcel (Klikwork) doet alleen trainingen → mogelijk losgekoppeld van praktijk
+- Jij bent nog steeds operationeel → kent de actuele uitdagingen
+- Combinatie recruitment + technologie is uniek
 
 ### Eerste 3 Stappen
 

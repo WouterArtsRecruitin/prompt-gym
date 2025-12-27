@@ -6,8 +6,9 @@
 |--------|--------|
 | Minimum retentie | 6 maanden |
 | Ideale retentie | 9 maanden |
-| LTV bij 6 maanden | €450 (€75 × 6) |
-| LTV bij 9 maanden | €675 (€75 × 9) |
+| LTV bij 6 maanden | €294 (€49 × 6) |
+| LTV bij 9 maanden | €441 (€49 × 9) |
+| LTV bij prijsstijging | €540+ (mix €49/€69/€75) |
 
 ---
 
@@ -135,7 +136,7 @@ Bouw fundament + geef genoeg waarde om te blijven, maar houd de "killer features
 │  ⭐ Complete outreach sequences (3-5 stappen)          │
 │     → 40% meer response                                │
 │                                                         │
-│  [Verleng Nu - €75/maand]                              │
+│  [Verleng Nu - €49/maand]                              │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
 ```
@@ -269,25 +270,26 @@ LEVEL 2-3 (€19)
 ├── 1 LinkedIn template
 └── Boolean basics
 
-MAAND 1-3 (€225)
+MAAND 1-3 (€147 bij €49/mnd)
 ├── Prompt fundamentals
 ├── Vacatures & Content
 ├── Sourcing basics
 └── 12 templates
 
-MAAND 4-6 (€225) ← Eerste verlenging
+MAAND 4-6 (€147 bij €49/mnd) ← Eerste verlenging
 ├── ⭐ CV Screening (killer feature)
 ├── ⭐ Interview prep
 ├── Advanced outreach sequences
 └── 15 templates
 
-MAAND 7-9 (€225) ← Tweede verlenging
+MAAND 7-9 (€147 bij €49/mnd) ← Tweede verlenging
 ├── Workflow automation
 ├── Advanced strategies
 ├── Complete playbook
 └── 🎁 30 min Personal Coaching
 
-TOTAAL: €19 + €675 = €694 lifetime value
+TOTAAL: €19 + €441 = €460 lifetime value (bij €49)
+Na prijsstijging: €19 + €540+ = €559+ lifetime value
 ```
 
 ---
@@ -378,21 +380,27 @@ TOTAAL: €19 + €675 = €694 lifetime value
 | Maand 6 → Verlenging 2 | 50% |
 | Maand 9 → Doorlopend | 30% |
 | **Gemiddelde retentie** | **6.5 maanden** |
-| **Gemiddelde LTV** | **€506** |
+| **Gemiddelde LTV** | **€337** (bij €49/mnd) |
+| **LTV na prijsstijging** | **€450+** (mix pricing) |
 
-### LTV Berekening
+### LTV Berekening (bij €49/maand startprijs)
 
 ```
 1000 Level 2-3 kopers (€19)        = €19.000
 
 250 starten Pro (25%)
-├── Maand 1-3: 250 × €225          = €56.250
-├── Maand 4-6: 150 × €225 (60%)    = €33.750
-├── Maand 7-9: 75 × €225 (50%)     = €16.875
-└── Maand 10+: 22 × €75/mnd (30%)  = ongoing
+├── Maand 1-3: 250 × €147          = €36.750
+├── Maand 4-6: 150 × €147 (60%)    = €22.050
+├── Maand 7-9: 75 × €147 (50%)     = €11.025
+└── Maand 10+: 22 × €49/mnd (30%)  = ongoing
 
 Totaal jaar 1 van 1000 leads:
-€19.000 + €56.250 + €33.750 + €16.875 = €125.875
+€19.000 + €36.750 + €22.050 + €11.025 = €88.825
+
+Na prijsstijging naar €69-€75:
+├── Nieuwe klanten betalen meer
+├── Bestaande klanten groeien mee (optioneel)
+└── Verwachte LTV stijgt naar €450-€500+
 ```
 
 ---

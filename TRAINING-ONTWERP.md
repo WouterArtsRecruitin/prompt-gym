@@ -6,7 +6,7 @@
 |---|---|
 | **Naam** | Prompt Gym Pro |
 | **Duur** | 12 weken |
-| **Prijs** | €75/maand |
+| **Prijs** | €49/maand (startprijs) |
 | **Format** | Wekelijkse modules met oefeningen |
 | **Doelgroep** | Recruiters & HR professionals |
 
@@ -25,7 +25,7 @@
 │  ├── 6 bonus templates                                  │
 │  └── Eerste betaling = commitment                       │
 ├─────────────────────────────────────────────────────────┤
-│  PRO: €75/maand                                         │
+│  PRO: €49/maand (startprijs)                             │
 │  ├── Week 1-4:  Module 1 - Fundamentals                │
 │  ├── Week 5-8:  Module 2 - Content & Vacatures         │
 │  └── Week 9-12: Module 3 - Sourcing & Outreach         │
@@ -38,14 +38,14 @@
 |--------|-------|--------------|
 | Level 1 | **Gratis** | 3 oefeningen, 3 templates |
 | Level 2-3 | **€19 eenmalig** | 6 extra oefeningen, 6 templates |
-| Pro | **€75/maand** | 12 weken training, 24 templates |
+| Pro | **€49/maand** | 12 weken training, 24 templates |
 
 ### Één Prijs, Simpel
 
 ```
-PRO = €75/maand
+PRO = €49/maand (startprijs)
 
-Geen kortingen. Geen tiers.
+Gefaseerde prijsstijging: €49 → €69 → €75
 Opzeggen wanneer je wilt.
 ```
 
@@ -59,7 +59,7 @@ Opzeggen wanneer je wilt.
 | Bron | Prijs | Bij 100 users | Bij 500 users |
 |------|-------|---------------|---------------|
 | Level 2-3 | €19 | €1.900 | €9.500 |
-| Pro (20% conversie) | €75/maand | €1.500/maand | €7.500/maand |
+| Pro (20% conversie) | €49/maand | €980/maand | €4.900/maand |
 
 ---
 
@@ -91,7 +91,7 @@ Opzeggen wanneer je wilt.
 │  │         [Start Week 1 Gratis]                   │   │
 │  └─────────────────────────────────────────────────┘   │
 │                                                         │
-│  Daarna €75/maand. Opzeggen wanneer je wilt.           │
+│  Daarna €49/maand. Opzeggen wanneer je wilt.           │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
 ```
@@ -127,7 +127,7 @@ Week 1 Pro (gratis, 7 dagen)
     ↓
 Dag 5: Email reminder "Nog 2 dagen gratis"
     ↓
-Dag 7: "Wil je doorgaan? €75/maand"
+Dag 7: "Wil je doorgaan? €49/maand"
     ↓
 [Ja] → Stripe checkout → Pro member
 [Nee] → Terug naar Level 3 (maar ze hebben Pro geproefd)
@@ -436,7 +436,7 @@ Lever in: 5 prompts + 5 outputs + reflectie
 8. Boolean Search Basis
 9. Outreach Bericht Template
 
-### Pro €75/maand
+### Pro €49/maand
 10. Vacature Generator v2
 11. Tone of Voice Adapter
 12. A/B Test Generator
@@ -522,7 +522,7 @@ Weekend:    Optioneel: extra oefenen
 ### Must Have (Week 1 launch)
 - [ ] User login/registratie
 - [ ] Email capture voor Level 2-3
-- [ ] Stripe integratie (€75/maand)
+- [ ] Stripe integratie (€49/maand)
 - [ ] Content unlock per week
 - [ ] Oefening submit form
 - [ ] Template download
@@ -560,6 +560,41 @@ Weekend:    Optioneel: extra oefenen
 
 ---
 
+## Unique Selling Proposition (USP)
+
+### Waarom Prompt Gym?
+
+| Factor | Prompt Gym | Concurrenten |
+|--------|------------|--------------|
+| **Ervaring** | 25+ jaar in recruitment én technologie | Vaak alleen training, geen operationeel |
+| **Actualiteit** | Nog steeds operationeel actief in recruitment | Mogelijk losgekoppeld van dagelijkse praktijk |
+| **Connectie** | Directe verbinding met problemen van recruiters | Theoretische kennis |
+| **Prijs** | €49/maand (startprijs) | Klikwork €29, AIHR €94 |
+
+### De Prompt Gym Belofte
+
+```
+"Gemaakt door een recruiter die nog steeds dagelijks
+dezelfde uitdagingen ervaart als jij."
+
+✓ 25+ jaar ervaring in recruitment EN technologie
+✓ Nog steeds operationeel actief - geen ivoren toren
+✓ Directe connectie met jouw dagelijkse problemen
+✓ Praktische oplossingen die echt werken
+```
+
+### Prijsstrategie
+
+| Fase | Prijs | Strategie |
+|------|-------|-----------|
+| **Start** | €49/maand | Netwerk opbouwen, social proof verzamelen |
+| **Groei** | €69/maand | Na 100+ actieve abonnees |
+| **Volwassen** | €75/maand | Na 200+ actieve abonnees |
+
+**Rationale:** Lager beginnen, focussen op retentie en testimonials, dan prijzen verhogen.
+
+---
+
 ## Volgende Stap
 
 1. **Beta testers selecteren** (5-10 recruiters)
@@ -570,4 +605,4 @@ Weekend:    Optioneel: extra oefenen
 
 ---
 
-*Versie 1.0 - December 2025*
+*Versie 1.1 - December 2025 - Updated met €49 pricing en USP*
