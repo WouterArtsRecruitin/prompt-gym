@@ -50,6 +50,7 @@ export interface Database {
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [];
       };
       user_progress: {
         Row: {
@@ -60,13 +61,11 @@ export interface Database {
           unlocked_templates: string[];
           total_score: number;
           last_activity: string;
-          // Extended tracking
           week_attempts: WeekAttempts;
           streak_days: number;
           longest_streak: number;
           total_time_minutes: number;
           sessions_count: number;
-          // Retention signals
           churn_risk: ChurnRisk;
           last_reminder_sent: string | null;
           reminder_count: number;
@@ -105,6 +104,7 @@ export interface Database {
           last_reminder_sent?: string | null;
           reminder_count?: number;
         };
+        Relationships: [];
       };
       trial_log: {
         Row: {
@@ -125,6 +125,7 @@ export interface Database {
           ip_hash?: string | null;
           trial_started?: string;
         };
+        Relationships: [];
       };
       activity_log: {
         Row: {
@@ -148,7 +149,20 @@ export interface Database {
           event_data?: Record<string, unknown>;
           created_at?: string;
         };
+        Relationships: [];
       };
+    };
+    Views: {
+      [_ in never]: never;
+    };
+    Functions: {
+      [_ in never]: never;
+    };
+    Enums: {
+      [_ in never]: never;
+    };
+    CompositeTypes: {
+      [_ in never]: never;
     };
   };
 }
