@@ -133,10 +133,16 @@ export async function startSession(): Promise<void> {
 
   if (!user) return;
 
+  const { data: currentProgress } = await supabase
+    .from('user_progress')
+    .select('sessions_count')
+    .eq('user_id', user.id)
+    .single();
+
   await supabase
     .from('user_progress')
     .update({
-      sessions_count: supabase.rpc('increment_sessions'),
+      sessions_count: (currentProgress?.sessions_count || 0) + 1,
       last_activity: new Date().toISOString(),
     })
     .eq('user_id', user.id);
