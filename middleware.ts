@@ -7,6 +7,7 @@ export async function middleware(request: NextRequest) {
 
   // Skip auth if Supabase is not configured
   if (!supabaseUrl || !supabaseAnonKey) {
+    console.warn('[middleware] Supabase env vars missing, skipping auth');
     return NextResponse.next();
   }
 
@@ -72,8 +73,9 @@ export async function middleware(request: NextRequest) {
     }
 
     return supabaseResponse;
-  } catch {
+  } catch (error) {
     // If middleware fails, allow the request through rather than blocking
+    console.error('[middleware] Auth check failed:', error);
     return NextResponse.next();
   }
 }
